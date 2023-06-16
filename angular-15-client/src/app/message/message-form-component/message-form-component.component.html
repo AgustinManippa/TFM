@@ -1,0 +1,17 @@
+<h2>soy el mensaje form</h2>
+<form (ngSubmit)="sendMessage()" [formGroup]="messageForm">
+  <!-- <div>
+    <label for="sender">Remitente:</label>
+    <input type="text" username="sender" formControlName="sender" required>
+  </div> -->
+  <div>
+    <label for="recipient">Destinatario:</label>
+    <input type="text" username="recipient" formControlName="recipient" required>
+  </div>
+  <div>
+    <textarea formControlName="content" required></textarea>
+  </div>
+  <div>
+    <button type="submit" [disabled]="!messageForm.valid">Enviar</button>
+  </div>
+</form>

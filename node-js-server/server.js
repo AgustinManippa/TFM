@@ -11,8 +11,6 @@ var corsOptions = {
   credentials: true
 }
 
-app.use(cors()); // Habilitar CORS para todas las solicitudes
-
 app.use(cors(corsOptions));
 
 // parse requests of content-type - application/json
@@ -54,20 +52,16 @@ db.mongoose
 
 // simple route
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to bezkoder application." });
+  res.json({ message: "Bienvenidos a la pagina de MARVEL" });
 });
 
 // routes
 require("./app/routes/auth.routes")(app);
 require("./app/routes/user.routes")(app);
 require("./app/routes/marvel.routes")(app);
+require("./app/routes/message.routes")(app);
 
 // set port, listen for requests
-
-
-app.listen(3000, () => {
-  console.log('Backend server is running on port 3000');
-});
 
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {

@@ -13,7 +13,7 @@ exports.getCharacters = async (req, res) => {
                 "hash": hash
             }
         });
-        res.json(response.data);
+        res.json(response.data.data);
     } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'An error occurred' });

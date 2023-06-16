@@ -22,6 +22,14 @@ import { VideosComponent } from './pages/videos/videos.component';
 import { PagesComponent } from './pages/pages.component';
 import { ComicsComponent } from './pages/comics/comics.component';
 import { MarvelService } from './_services/marvel.service';
+import { ChatWindowComponent} from './message/chat-window-component/chat-window-component.component';
+import { ConversationListComponent } from './message/conversation-list-component/conversation-list-component.component';
+import { MessageFormComponent } from './message/message-form-component/message-form-component.component';
+import { ConversationService } from './_services/conversation.service';
+import { MessageComponent } from './message/message.component';
+import { UserService } from './_services/list-user.service';
+import { UserListComponent } from './list-user/list-user.component';
+import { JwtHelperService, JwtModule } from '@auth0/angular-jwt';
 
 @NgModule({
   declarations: [
@@ -39,16 +47,31 @@ import { MarvelService } from './_services/marvel.service';
     JuegosComponent,
     VideosComponent,
     PagesComponent,
-    ComicsComponent
+    ComicsComponent,
+    MessageComponent,
+    ChatWindowComponent,
+    MessageFormComponent,
+    ConversationListComponent,
+    UserListComponent
+  
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: () => {
+          return localStorage.getItem('token');
+        },
+        allowedDomains: ['localhost:8080'], // Reemplaza esto con tu dominio permitido
+        disallowedRoutes: ['http://example.com/exampleapi/'], // Reemplaza esto con tus rutas deshabilitadas
+      },
+    }),
   ],
-  providers: [httpInterceptorProviders,MarvelService],
+  providers: [httpInterceptorProviders,MarvelService,ConversationService,UserService,JwtHelperService],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
