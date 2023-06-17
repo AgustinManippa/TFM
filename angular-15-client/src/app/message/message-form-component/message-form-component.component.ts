@@ -20,7 +20,6 @@ export class MessageFormComponent {
 
   sendMessage() {
     if (this.messageForm.valid) {
-      // const sender = this.messageForm.get('sender')?.value;
       const recipient = this.messageForm.get('recipient')?.value;
       const content = this.messageForm.get('content')?.value;
       

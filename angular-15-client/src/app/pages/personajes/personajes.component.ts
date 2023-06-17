@@ -20,7 +20,7 @@ export class PersonajesComponent {
   ) {
 
       this.formGroup = this.formBuilder.group({
-          limit: [0, [Validators.required, Validators.min(0)]],
+          limit: [1, [Validators.required, Validators.min(1)]],
           // nombre: [ '', [Validators.required]]
       });
   }
@@ -28,23 +28,9 @@ export class PersonajesComponent {
       this.cargarPersonajes();
   }
 
-  // cargarPersonajes()
-  //  {
-  //   if (this.formGroup.valid) {
-  //     this.MarvelService
-  //         .getPersonajes()
-  //         .subscribe((response: any) => {
-  //             this.characters = response.results;
-  //         });
-  // } else {
-  //     alert('El formulario no es valido');
-  // }
-    
-  // }
-
   cargarPersonajes() {
     if (this.formGroup.valid) {
-      const limit = this.formGroup.get('limit')?.value || 0; // Obtén el valor del límite del formulario
+      const limit = parseInt(this.formGroup.get('limit')?.value, 10) || 1;
       this.MarvelService.getPersonajes(limit).subscribe(
         (response: GetCharacterResult) => {
           this.characters = response?.results || [];

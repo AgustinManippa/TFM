@@ -8,12 +8,14 @@ import { Conversation } from 'src/app/interfaces/conversation.model';
   styleUrls: ['./chat-window-component.component.css']
 })
 export class ChatWindowComponent {
+
   @Input() conversation: Conversation = {
     id: '',
   name: '',
   participants: [],
   messages: []
   };
+  
   constructor() {
   }
 }

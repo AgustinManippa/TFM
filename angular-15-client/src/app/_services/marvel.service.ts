@@ -9,13 +9,11 @@ export class MarvelService {
 
   constructor(private http: HttpClient) {}
 
-//   getPersonajes() {
-//     const url = `${this.backendUrl}/api/marvel/characters`;
-//     return this.http.get(url);
-//   }
-// }
-
 getPersonajes(limit: number): Observable<GetCharacterResult> {
+      // Verificar si el límite es mayor que 0
+      if (limit <= 0 || isNaN(limit)) {
+        throw new Error('El límite debe ser un número entero mayor que 0.');
+      }
   const url = `${this.backendUrl}/api/marvel/characters`;
   return this.http.get<GetCharacterResult>(`${url}`, {
     params: {

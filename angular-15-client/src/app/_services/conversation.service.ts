@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Conversation } from 'src/app/interfaces/conversation.model';
 import { StorageService } from '../_services/storage.service';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -16,8 +17,13 @@ export class ConversationService {
     this.username = storageService.getUser().username;
   }
   
-  getConversations(): Conversation[] {
-    return this.conversations;
+  // getConversations(): Conversation[] {
+  //   return this.conversations;
+  // }
+
+  getConversations(): Observable<Conversation[]> {
+    const url = `${this.backendUrl}/api/messages/${this.username}`;
+    return this.http.get<Conversation[]>(url);
   }
 
   addConversation(conversation: Conversation) {
