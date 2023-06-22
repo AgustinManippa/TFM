@@ -3,9 +3,9 @@ import { Conversation } from 'src/app/interfaces/conversation.model';
 
 
 @Component({
-  selector: 'app-chat-window-component',
-  templateUrl: './chat-window-component.component.html',
-  styleUrls: ['./chat-window-component.component.css']
+  selector: 'app-chat-window',
+  templateUrl: './chat-window.component.html',
+  styleUrls: ['./chat-window.component.css']
 })
 export class ChatWindowComponent {
 

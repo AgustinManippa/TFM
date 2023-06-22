@@ -13,4 +13,6 @@ module.exports = function(app){
     app.get('/api/messages/:username', MessageController.getMessages);
 
     app.post('/api/messages', MessageController.sendMessage);
+
   };
+  

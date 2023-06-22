@@ -3,9 +3,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ConversationService } from 'src/app/_services/conversation.service';
 
 @Component({
-  selector: 'app-message-form-component',
-  templateUrl: './message-form-component.component.html',
-  styleUrls: ['./message-form-component.component.css']
+  selector: 'app-message-form',
+  templateUrl: './message-form.component.html',
+  styleUrls: ['./message-form.component.css']
 })
 export class MessageFormComponent {
   messageForm: FormGroup;

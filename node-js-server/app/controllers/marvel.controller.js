@@ -19,7 +19,7 @@ exports.getCharacters = async (req, res) => {
                 "ts": timeStamp,
                 "apikey": env.publicKey,
                 "hash": hash,
-                "limit": req.query.limit // Obtén el valor del parámetro 'limit' de la solicitud
+                "limit": req.query.limit // Obtiene el valor del parámetro 'limit' de la solicitud
 
             }
         });
