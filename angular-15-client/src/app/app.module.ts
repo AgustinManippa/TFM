@@ -15,14 +15,10 @@ import { BoardUserComponent } from './board-user/board-user.component';
 
 import { httpInterceptorProviders } from './_helpers/http.interceptor';
 import { PersonajesComponent } from './pages/personajes/personajes.component';
-import { PeliculasComponent } from './pages/peliculas/peliculas.component';
 import { SeriesComponent } from './pages/series/series.component';
-import { JuegosComponent } from './pages/juegos/juegos.component';
-import { VideosComponent } from './pages/videos/videos.component';
 import { PagesComponent } from './pages/pages.component';
 import { ComicsComponent } from './pages/comics/comics.component';
 import { MarvelService } from './_services/marvel.service';
-import { ChatWindowComponent} from './message/chat-window/chat-window.component';
 import { ConversationListComponent } from './message/conversation-list/conversation-list.component';
 import { MessageFormComponent } from './message/message-form/message-form.component';
 import { ConversationService } from './_services/conversation.service';
@@ -30,6 +26,8 @@ import { MessageComponent } from './message/message.component';
 import { UserService } from './_services/list-user.service';
 import { UserListComponent } from './list-user/list-user.component';
 import { JwtHelperService, JwtModule } from '@auth0/angular-jwt';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { EnciclopediaComponent } from './pages/enciclopedia/enciclopedia.component';
 
 @NgModule({
   declarations: [
@@ -42,14 +40,11 @@ import { JwtHelperService, JwtModule } from '@auth0/angular-jwt';
     BoardModeratorComponent,
     BoardUserComponent,
     PersonajesComponent,
-    PeliculasComponent,
     SeriesComponent,
-    JuegosComponent,
-    VideosComponent,
     PagesComponent,
     ComicsComponent,
+    EnciclopediaComponent,
     MessageComponent,
-    ChatWindowComponent,
     MessageFormComponent,
     ConversationListComponent,
     UserListComponent
@@ -71,7 +66,8 @@ import { JwtHelperService, JwtModule } from '@auth0/angular-jwt';
       },
     }),
   ],
-  providers: [httpInterceptorProviders,MarvelService,ConversationService,UserService,JwtHelperService],
+  providers: [httpInterceptorProviders,MarvelService,ConversationService,UserService,JwtHelperService, { provide: LocationStrategy, useClass: HashLocationStrategy }
+],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

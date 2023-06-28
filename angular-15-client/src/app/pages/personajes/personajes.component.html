@@ -1,33 +1,28 @@
-<h1>Personajes</h1>
-
-<form [formGroup]="formGroup" (ngSubmit)="cargarPersonajes()">
+<form [formGroup]="formGroup" (ngSubmit)="cargarPersonajes()" class="personajes-form">
   <div>
     <label for="limit">Límite:</label>
-    <input type="number" id="limit" formControlName="limit" required>
-    <div *ngIf="formGroup?.get('limit')?.invalid && formGroup?.get('limit')?.touched">
+    <select id="limit" formControlName="limit" required>
+      <option *ngFor="let page of getPageNumbers()" [value]="(page + 1) * charactersPerPage">
+        {{ getDisplayedRange(page) }}
+      </option>
+    </select>
+    <div *ngIf="formGroup?.get('limit')?.invalid && formGroup?.get('limit')?.touched" class="error-message">
       El límite es requerido y debe ser un número mayor o igual a cero.
     </div>
   </div>
-  
-  <!-- Otros campos del formulario -->
 
-<button type="submit" [disabled]="formGroup.invalid">Cargar Personajes</button>
+  <button type="submit" class="cargar" [disabled]="formGroup.invalid" (click)="cargarPersonajes()">Cargar Personajes</button>
 </form>
 
 <div *ngIf="characters.length > 0">
-  <h2>Lista de personajes:</h2>
+  <h2 class="personajes-heading">Lista de personajes:</h2>
   <ul>
     <li *ngFor="let character of characters">
-      {{ character.name }}
+      <p>{{ character.name }} (ID: {{ character.id }})</p>
     </li>
   </ul>
 </div>
 
-<div *ngIf="characters.length === 0">
+<div *ngIf="characters.length === 0" class="no-characters">
   <p>No se encontraron personajes.</p>
 </div>
-
-
-
-
-

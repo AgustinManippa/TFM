@@ -1,0 +1,35 @@
+.message-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.conversation-list {
+  width: 50%;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  margin-right: 5px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.conversation-list h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.message-form {
+  width: 50%;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.message-form h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-align: center;
+}

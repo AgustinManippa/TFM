@@ -1,21 +1,21 @@
-<!-- <h2>Soy la lista de conversaciones</h2>
-<div *ngFor="let message of result?.messages">
-    <p>{{ message.content }}</p>
-    <p>From: {{ message.senderUsername }}</p>
-    <p>To: {{ message.recipientUsername }}</p>
-  </div> -->
-
-  <div class="conversation-list">
-    <h2>Conversations</h2>
-    <ul>
-      <li *ngFor="let conversation of result?.messages">
-        <div class="conversation-item">
-          <div class="conversation-header">
-            <h3>{{ conversation.senderUsername }}</h3>
-            <span>{{ conversation.timestamp | date: 'medium' }}</span>
-          </div>
-          <p>{{ conversation.content }}</p>
-        </div>
-      </li>
-    </ul>
+<div class="conversation-list">
+  <h2>Conversaciones</h2>
+  <div class="search-bar">
+    <form (ngSubmit)="filterConversations()">
+      <input type="text" [(ngModel)]="senderFilter" name="senderFilter" placeholder="Buscar por remitente">
+      <button type="submit">Buscar</button>
+      <button class="reset" type="button" (click)="resetFilter()">Restablecer</button>
+    </form>
   </div>
+  <ul>
+    <li *ngFor="let conversation of filteredConversations">
+      <div class="conversation-item">
+        <div class="conversation-header">
+          <h3>{{ conversation.senderUsername }}</h3>
+          <span class="timestamp">{{ conversation.timestamp | date: 'medium' }}</span>
+        </div>
+        <p class="content">{{ conversation.content }}</p>
+      </div>
+    </li>
+  </ul>
+</div>

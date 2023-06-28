@@ -1,7 +1,7 @@
  export interface Conversation {
-    id: string;
-    name: string;
-    participants: string[];
+    senderUsername: string;
+    timestamp: Date;
+    content: string;
     messages: Message[];
   }
   

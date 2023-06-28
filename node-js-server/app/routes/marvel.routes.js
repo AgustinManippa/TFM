@@ -9,5 +9,15 @@ module.exports = function(app){
     next();
   });
 
-  app.get('/api/marvel/characters', controller.getCharacters)
+  app.get('/api/marvel/characters', controller.getCharacters);
+
+  app.get('/api/characters/:characterId', controller.getCharacterById);
+
+  app.get('/api/characters/:characterId/comics', controller.getCharacterComics);
+
+  app.get('/api/characters/:characterId/events', controller.getCharacterEvents);
+
+  app.get('/api/characters/:characterId/series', controller.getCharacterSeries);
+
+  app.get('/api/characters/:characterId/stories', controller.getCharacterStories);
 };

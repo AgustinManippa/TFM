@@ -1,0 +1,16 @@
+<div class="enciclopedia-container">
+    <h1>Enciclopedia de Personajes</h1>
+    <div>
+      <label for="characterId">ID del personaje:</label>
+      <input type="number" id="characterId" [(ngModel)]="characterId">
+      <button (click)="buscarPersonaje()">Buscar</button>
+    </div>
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+    <div *ngIf="character" class="character" >
+        <h2>{{ character.name }}</h2>
+        <p>{{ character.description }}</p>
+        <img [src]="getCharacterImageUrl(character.thumbnail)" alt="Character Image">
+      </div>
+  </div>

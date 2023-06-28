@@ -27,4 +27,7 @@ module.exports = function(app) {
   );
 
   app.get("/api/listusers", controller.listUsers);
+
+  app.delete("/api/delete/:username", controller.deleteUserByUsername);
+
 };

@@ -23,14 +23,8 @@ export class MessageFormComponent {
       const recipient = this.messageForm.get('recipient')?.value;
       const content = this.messageForm.get('content')?.value;
       
-      this.conversationService.sendMessage("4", content, recipient);
+      this.conversationService.sendMessage(content, recipient);
       this.messageForm.reset();
     }
   }
 }
-
-
-
-
-
-

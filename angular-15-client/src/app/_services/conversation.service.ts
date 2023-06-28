@@ -21,19 +21,19 @@ export class ConversationService {
   //   return this.conversations;
   // }
 
-  getConversations(): Observable<Conversation[]> {
-    const url = `${this.backendUrl}/api/messages/${this.username}`;
+  getConversations(senderName: string = ''): Observable<Conversation[]> {
+    const url = `${this.backendUrl}/api/messages/${this.username}?senderName=${senderName}`;
     return this.http.get<Conversation[]>(url);
   }
 
-  addConversation(conversation: Conversation) {
-    this.conversations.push(conversation);
-  }
-
-  sendMessage(conversationId: string, content: string, recipientUsername:string) {
+  sendMessage(content: string, recipientUsername:string) {
     // const url = `/api/conversations/${conversationId}/messages`;
        const url = `${this.backendUrl}/api/messages`;
 
+       if (this.username === recipientUsername) {
+        console.error('No puedes enviarte un mensaje a ti mismo');
+        return;
+      }
 
        // Comprobar si el dato existe
        if (this.username !== null) {
@@ -52,11 +52,10 @@ export class ConversationService {
 
     this.http.post(url, body).subscribe(
       (response: any) => {
-        // Actualiza la conversación en el servicio con la respuesta del backend
-        const updatedConversation = response.conversation;
-        const conversationIndex = this.conversations.findIndex(conv => conv.id === updatedConversation.id);
-        if (conversationIndex !== -1) {
-          this.conversations[conversationIndex] = updatedConversation;
+          // Verificar si el destinatario no existe en la respuesta del backend
+        if (response.error === 'El destinatario no existe') {
+          console.error('El destinatario no existe');
+          return;
         }
       },
       (error) => {
