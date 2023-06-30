@@ -18,3 +18,15 @@ export interface Image {
   extension: string;
 }
 
+export interface GetExtrasResult {
+  offset: number;
+  limit: number;
+  total: number;
+  count: number;
+  results: ExtrasResult[];
+}
+
+export interface ExtrasResult {
+  title: string;
+  description: string;
+}

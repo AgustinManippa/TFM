@@ -14,6 +14,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'message', loadChildren: () => import('./message/message-routing.module').then(m => m.MessageRoutingModule) },
   { path: '', loadChildren: () => import('./pages/pages-routing.module').then(m => m.PagesRoutingModule) },
+  { path: '', loadChildren: () => import('./footer-content/footer-content-routing.module').then(m => m.PagesRoutingModule) },
   { path: 'listuser', component: UserListComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },

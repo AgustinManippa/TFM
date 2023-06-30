@@ -1,0 +1,47 @@
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .info-table th, .info-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    background-color: #fff; /* Fondo blanco */
+  }
+  
+  .info-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .error-message {
+    color: red;
+    margin-bottom: 10px;
+  }
+
+  .info-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .info-table th, .info-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .info-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .error-message {
+    color: red;
+    margin-bottom: 10px;
+  }
+  
+  .section-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-top: 20px;
+  }

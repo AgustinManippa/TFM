@@ -16,11 +16,20 @@
 
 <div *ngIf="characters.length > 0">
   <h2 class="personajes-heading">Lista de personajes:</h2>
-  <ul>
-    <li *ngFor="let character of characters">
-      <p>{{ character.name }} (ID: {{ character.id }})</p>
-    </li>
-  </ul>
+  <table class="personajes-table">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>ID</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let character of characters">
+        <td>{{ character.name }}</td>
+        <td>{{ character.id }}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
 <div *ngIf="characters.length === 0" class="no-characters">

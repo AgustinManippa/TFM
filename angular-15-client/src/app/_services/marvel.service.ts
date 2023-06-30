@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { GetCharacterResult,CharacterResult } from '../interfaces/marvel.model';
+import { GetCharacterResult, GetExtrasResult} from '../interfaces/marvel.model';
 
 @Injectable()
 export class MarvelService {
@@ -34,39 +34,39 @@ getPersonajes(limit: number, offset: number): Observable<GetCharacterResult> {
     return this.http.get<GetCharacterResult>(url);
   }
 
-  getCharacterComics(characterId: number): Observable<any> {
+  getCharacterComics(characterId: number): Observable<GetExtrasResult> {
     if (isNaN(characterId) || characterId <= 0) {
       throw new Error('La ID del personaje debe ser un número entero mayor a 0.');
     }
 
     const url = `${this.backendUrl}/api/characters/${characterId}/comics`;
-    return this.http.get<any>(url);
+    return this.http.get<GetExtrasResult>(url);
   }
 
-  getCharacterEvents(characterId: number): Observable<any> {
+  getCharacterEvents(characterId: number): Observable<GetExtrasResult> {
     if (isNaN(characterId) || characterId <= 0) {
       throw new Error('La ID del personaje debe ser un número entero mayor a 0.');
     }
 
     const url = `${this.backendUrl}/api/characters/${characterId}/events`;
-    return this.http.get<any>(url);
+    return this.http.get<GetExtrasResult>(url);
   }
 
-  getCharacterSeries(characterId: number): Observable<any> {
+  getCharacterSeries(characterId: number): Observable<GetExtrasResult> {
     if (isNaN(characterId) || characterId <= 0) {
       throw new Error('La ID del personaje debe ser un número entero mayor a 0.');
     }
 
     const url = `${this.backendUrl}/api/characters/${characterId}/series`;
-    return this.http.get<any>(url);
+    return this.http.get<GetExtrasResult>(url);
   }
 
-  getCharacterStories(characterId: number): Observable<any> {
+  getCharacterStories(characterId: number): Observable<GetExtrasResult> {
     if (isNaN(characterId) || characterId <= 0) {
       throw new Error('La ID del personaje debe ser un número entero mayor a 0.');
     }
 
     const url = `${this.backendUrl}/api/characters/${characterId}/stories`;
-    return this.http.get<any>(url);
+    return this.http.get<GetExtrasResult>(url);
   }
 }

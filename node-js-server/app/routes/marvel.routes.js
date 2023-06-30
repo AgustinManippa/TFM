@@ -11,6 +11,10 @@ module.exports = function(app){
 
   app.get('/api/marvel/characters', controller.getCharacters);
 
+  app.get('/api/marvel/comics', controller.getCharacterComics);
+
+  app.get('/api/marvel/series', controller.getSeries);
+
   app.get('/api/characters/:characterId', controller.getCharacterById);
 
   app.get('/api/characters/:characterId/comics', controller.getCharacterComics);

@@ -1,5 +1,5 @@
 <div id="app">
-  <nav class="navbar navbar-expand navbar-dark bg-dark">
+  <nav class="navbar navbar-expand navbar-dark bg-custom">
     <a href="/#/home" class="navbar-brand">MARVEL</a>
     <ul class="navbar-nav mr-auto" routerLinkActive="active">
       <li class="nav-item">
@@ -35,6 +35,9 @@
       <li class="nav-item">
         <a href="" class="nav-link" aria-current="page" routerLink="enciclopedia">Enciclopedia</a>
       </li>
+      <li class="nav-item">
+        <a href="" class="nav-link" aria-current="page" routerLink="extras">Extras</a>
+      </li>
     </ul>
 
     <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
@@ -59,4 +62,36 @@
   <div class="container">
     <router-outlet></router-outlet>
   </div>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Enlaces útiles</h3>
+        <ul>
+          <li><a href="#" routerLink="home">Home</a></li>
+          <li><a href="#" routerLink="aboutUs">Acerca de nosotros</a></li>
+          <li><a href="#" routerLink="services">Servicios</a></li>
+          <li><a href="#" routerLink="contact">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Recursos</h3>
+        <ul>
+          <li><a href="#" routerLink="blog">Blog</a></li>
+          <li><a href="#" routerLink="faqs">Preguntas frecuentes</a></li>
+          <li><a href="#" routerLink="termsconditions">Términos y condiciones</a></li>
+          <li><a href="#" routerLink="privacypolicy">Política de privacidad</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contacto</h3>
+        <p>Dirección: Calle Principal, Ciudad</p>
+        <p>Teléfono: 123-456-789</p>
+        <p>Email: info@marvel.com</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2023 Marvel. Todos los derechos reservados.</p>
+    </div>
+  </footer>
 </div>

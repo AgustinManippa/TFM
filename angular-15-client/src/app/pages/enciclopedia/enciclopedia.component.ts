@@ -26,7 +26,6 @@ export class EnciclopediaComponent {
     this.marvelService.getPersonajeById(this.characterId).subscribe(
       (response: GetCharacterResult) => {
         if (response) {
-          console.log(response)
           this.character = response.results[0];
         } else {
           this.errorMessage = 'No se encontró ningún personaje con esa ID.';

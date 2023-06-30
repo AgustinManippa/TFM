@@ -1,71 +1,74 @@
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-  }
+.personajes-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
 
-  .cargar{
-    margin-top: 5px;
-    margin-left: 55px;
-  }
-  
-  label {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  select {
-    padding: 8px;
-    font-size: 16px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    width: 200px;
-  }
-  
-  div.error-message {
-    color: red;
-    margin-top: 5px;
-  }
-  
-  button[type="submit"] {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #4caf50;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  button[type="submit"]:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-  }
-  
-  h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  li {
-    margin-bottom: 5px;
-  }
-  
-  p {
-    margin: 0;
-    font-size: 16px;
-    color: #beb3b3;
-  }
-  
-  div.no-characters {
-    margin-top: 20px;
-    font-size: 16px;
-    color: #999;
-  }
+.personajes-form label,
+.personajes-form select {
+  margin-bottom: 10px;
+}
+
+.personajes-form .cargar {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.personajes-form .cargar:hover {
+  background-color: #45a049;
+}
+
+.personajes-heading {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.personajes-table {
+  width: 100%;
+  background-color: #fff;
+  border-collapse: collapse;
+  border: 2px solid #000;
+}
+
+.personajes-table th,
+.personajes-table td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #000;
+  text-align: center;
+  position: relative;
+}
+
+.personajes-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.personajes-table tr:hover {
+  background-color: #ff0000;
+}
+
+.personajes-table td {
+  text-align: center;
+}
+
+.personajes-heading {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 20px;
+}
+
+.no-characters {
+  color: red;
+  margin-top: 20px;
+  text-align: center;
+}

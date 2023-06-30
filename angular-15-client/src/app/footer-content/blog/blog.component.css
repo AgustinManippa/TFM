@@ -1,0 +1,24 @@
+.blog {
+    margin-top: 20px;
+  }
+  
+  .blog-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .blog-post {
+    margin-bottom: 20px;
+  }
+  
+  .blog-post-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .blog-post-content {
+    font-size: 16px;
+    line-height: 1.5;
+  }

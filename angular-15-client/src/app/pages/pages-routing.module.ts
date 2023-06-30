@@ -6,6 +6,7 @@ import { PersonajesComponent } from './personajes/personajes.component';
 import { SeriesComponent } from './series/series.component';
 import { ComicsComponent } from './comics/comics.component';
 import { EnciclopediaComponent } from './enciclopedia/enciclopedia.component';
+import { ExtrasComponent } from './extras/extras.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,7 @@ const routes: Routes = [
       { path: 'series', component: SeriesComponent },
       { path: 'comics', component: ComicsComponent },
       { path: 'enciclopedia', component: EnciclopediaComponent },
+      { path: 'extras', component: ExtrasComponent },
 
     //   { path: '', redirectTo: 'home', pathMatch: 'full' }
     ]

@@ -1,0 +1,26 @@
+.terms-conditions {
+    padding: 20px;
+    background-color: #f8f8f8;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .terms-conditions-title {
+    margin-top: 0;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .terms-condition {
+    margin-bottom: 20px;
+  }
+  
+  .terms-condition-title {
+    margin-top: 0;
+    font-size: 18px;
+  }
+  
+  .terms-condition-content {
+    margin-bottom: 0;
+  }

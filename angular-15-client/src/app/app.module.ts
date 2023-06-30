@@ -28,6 +28,15 @@ import { UserListComponent } from './list-user/list-user.component';
 import { JwtHelperService, JwtModule } from '@auth0/angular-jwt';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { EnciclopediaComponent } from './pages/enciclopedia/enciclopedia.component';
+import { ExtrasComponent } from './pages/extras/extras.component';
+import { AboutUsComponent } from './footer-content/about-us/about-us.component';
+import { ServicesComponent } from './footer-content/services/services.component';
+import { ContactComponent } from './footer-content/contact/contact.component';
+import { FooterContentComponent } from './footer-content/footer-content.component';
+import { BlogComponent } from './footer-content/blog/blog.component';
+import { FAQsComponent } from './footer-content/faqs/faqs.component';
+import { TermsConditionsComponent } from './footer-content/terms-conditions/terms-conditions.component';
+import { PrivacyPolicyComponent } from './footer-content/privacy-policy/privacy-policy.component';
 
 @NgModule({
   declarations: [
@@ -44,10 +53,19 @@ import { EnciclopediaComponent } from './pages/enciclopedia/enciclopedia.compone
     PagesComponent,
     ComicsComponent,
     EnciclopediaComponent,
+    ExtrasComponent,
     MessageComponent,
     MessageFormComponent,
     ConversationListComponent,
-    UserListComponent
+    UserListComponent,
+    AboutUsComponent,
+    ServicesComponent,
+    ContactComponent,
+    FooterContentComponent,
+    BlogComponent,
+    FAQsComponent,
+    TermsConditionsComponent,
+    PrivacyPolicyComponent
   
   ],
   imports: [

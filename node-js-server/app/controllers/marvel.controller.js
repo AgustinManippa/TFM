@@ -2,15 +2,15 @@ const axios = require('axios');
 var crypto = require('crypto');
 const env = require("../enviroment"); 
 
-exports.getCharacters = async (req, res) => {
+const makeMarvelRequest = async (url, req, res) => {
   const timeStamp = Date.now();
   const hash = crypto
     .createHash('md5')
     .update(timeStamp + env.privateKey + env.publicKey)
     .digest('hex');
 
-    const limit = parseInt(req.query.limit, 10);
-    const offset = parseInt(req.query.offset, 10);
+  const limit = parseInt(req.query.limit, 10);
+  const offset = parseInt(req.query.offset, 10);
 
   if (
     Number.isNaN(limit) ||
@@ -26,7 +26,7 @@ exports.getCharacters = async (req, res) => {
   }
 
   try {
-    const response = await axios.get('https://gateway.marvel.com/v1/public/characters', {
+    const response = await axios.get(url, {
       params: {
         ts: timeStamp,
         apikey: env.publicKey,
@@ -40,6 +40,21 @@ exports.getCharacters = async (req, res) => {
     console.error(error);
     res.status(500).json({ error: 'An error occurred' });
   }
+};
+
+exports.getCharacters = async (req, res) => {
+  const url = 'https://gateway.marvel.com/v1/public/characters';
+  await makeMarvelRequest(url, req, res);
+};
+
+exports.getComics = async (req, res) => {
+  const url = 'https://gateway.marvel.com/v1/public/comics';
+  await makeMarvelRequest(url, req, res);
+};
+
+exports.getSeries = async (req, res) => {
+  const url = 'https://gateway.marvel.com/v1/public/series';
+  await makeMarvelRequest(url, req, res);
 };
 
 const getMarvelData = async (url) => {
