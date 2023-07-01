@@ -18,6 +18,36 @@ export interface Image {
   extension: string;
 }
 
+export interface GetComicsResult {
+  offset: number;
+  limit: number;
+  total: number;
+  count: number;
+  results: ComicsResult[];
+}
+
+export interface ComicsResult {
+  title: string;
+  description: string;
+  isbn: string;
+  format: string;
+  pageCount: number;
+}
+
+export interface GetSeriesResult {
+  offset: number;
+  limit: number;
+  total: number;
+  count: number;
+  results: SeriesResult[];
+}
+
+export interface SeriesResult {
+  title: string;
+  description: string;
+  thumbnail: Image;
+}
+
 export interface GetExtrasResult {
   offset: number;
   limit: number;

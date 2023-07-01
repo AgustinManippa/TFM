@@ -1,0 +1,65 @@
+.series-form {
+    margin-bottom: 20px;
+  }
+  
+  .series-form label {
+    font-weight: bold;
+  }
+  
+  .series-form select {
+    margin-left: 10px;
+  }
+  
+  .error-message {
+    color: red;
+    margin-top: 5px;
+  }
+  
+  .cargar {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .cargar:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .series-heading {
+    margin-top: 20px;
+    font-size: 24px;
+  }
+  
+  .series-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    background-color: #fff;
+  }
+  
+  .series-table th,
+  .series-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+    border-color: #000;
+  }
+  
+  .series-table img {
+    max-width: 100px;
+    max-height: 100px;
+  }
+  
+  .no-series {
+    margin-top: 20px;
+    font-style: italic;
+    color: #777;
+  }
+  
+  .no-series p {
+    margin: 0;
+  }

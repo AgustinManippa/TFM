@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -23,8 +24,7 @@ import { ConversationListComponent } from './message/conversation-list/conversat
 import { MessageFormComponent } from './message/message-form/message-form.component';
 import { ConversationService } from './_services/conversation.service';
 import { MessageComponent } from './message/message.component';
-import { UserService } from './_services/list-user.service';
-import { UserListComponent } from './list-user/list-user.component';
+import { listUserService } from './_services/list-user.service';
 import { JwtHelperService, JwtModule } from '@auth0/angular-jwt';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { EnciclopediaComponent } from './pages/enciclopedia/enciclopedia.component';
@@ -57,7 +57,6 @@ import { PrivacyPolicyComponent } from './footer-content/privacy-policy/privacy-
     MessageComponent,
     MessageFormComponent,
     ConversationListComponent,
-    UserListComponent,
     AboutUsComponent,
     ServicesComponent,
     ContactComponent,
@@ -84,7 +83,7 @@ import { PrivacyPolicyComponent } from './footer-content/privacy-policy/privacy-
       },
     }),
   ],
-  providers: [httpInterceptorProviders,MarvelService,ConversationService,UserService,JwtHelperService, { provide: LocationStrategy, useClass: HashLocationStrategy }
+  providers: [httpInterceptorProviders,MarvelService,ConversationService,listUserService,JwtHelperService, { provide: LocationStrategy, useClass: HashLocationStrategy }
 ],
   bootstrap: [AppComponent],
 })

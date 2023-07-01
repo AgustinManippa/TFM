@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { listUserService } from '../_services/list-user.service';
 import { UserService } from '../_services/user.service';
+import { User } from '../interfaces/user.model';
 
 @Component({
   selector: 'app-board-moderator',
@@ -8,8 +10,10 @@ import { UserService } from '../_services/user.service';
 })
 export class BoardModeratorComponent implements OnInit {
   content?: string;
+  users: User[] = [];
+  username: string = '';
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private listUserService: listUserService) { }
 
   ngOnInit(): void {
     this.userService.getModeratorBoard().subscribe({
@@ -28,6 +32,10 @@ export class BoardModeratorComponent implements OnInit {
           this.content = `Error with status: ${err.status}`;
         }
       }
+    });
+
+    this.listUserService.getUsers().subscribe(users => {
+      this.users = users;
     });
   }
 }

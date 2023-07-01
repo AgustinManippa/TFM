@@ -42,6 +42,9 @@
   .section-title {
     font-size: 24px;
     font-weight: bold;
-    color: #ffffff;
+    color: #3b3131;
     margin-top: 20px;
+    padding: 10px;
+    background-color: #007bff;
+    border-radius: 5px;
   }

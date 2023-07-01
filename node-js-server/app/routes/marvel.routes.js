@@ -11,7 +11,7 @@ module.exports = function(app){
 
   app.get('/api/marvel/characters', controller.getCharacters);
 
-  app.get('/api/marvel/comics', controller.getCharacterComics);
+  app.get('/api/marvel/comics', controller.getComics);
 
   app.get('/api/marvel/series', controller.getSeries);
 

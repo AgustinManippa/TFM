@@ -1,1 +1,44 @@
-<p>series works!</p>
+<form [formGroup]="formGroup" (ngSubmit)="cargarSeries()" class="series-form">
+  <div>
+    <label for="limit">Límite:</label>
+    <select id="limit" formControlName="limit" required>
+      <option *ngFor="let page of getPageNumbers()" [value]="(page + 1) * seriesPerPage">
+        {{ getDisplayedRange(page) }}
+      </option>
+    </select>
+    <div *ngIf="formGroup?.get('limit')?.invalid && formGroup?.get('limit')?.touched" class="error-message">
+      El límite es requerido y debe ser un número mayor o igual a cero.
+    </div>
+  </div>
+
+  <button type="submit" class="cargar" [disabled]="formGroup.invalid" (click)="cargarSeries()">Cargar Series</button>
+</form>
+
+<div *ngIf="series.length > 0">
+  <h2 class="series-heading">Lista de series:</h2>
+  <table class="series-table">
+    <thead>
+      <tr>
+        <th>Título</th>
+        <th>Descripcion</th>
+        <th>Imagen</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let serie of series">
+        <td>{{ serie.title }}</td>
+        <td>{{ serie.description}}</td>
+        <td>
+          <button (click)="mostrarImagen(serie)">Mostrar imagen</button>
+          <div *ngIf="serie.showImage">
+            <img [src]="getSeriesImageUrl(serie.thumbnail)" alt="Serie Image">
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div *ngIf="series.length === 0" class="no-series">
+  <p>No se encontraron series.</p>
+</div>
