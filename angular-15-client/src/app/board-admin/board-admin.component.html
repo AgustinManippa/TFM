@@ -1,27 +1,29 @@
-<form (ngSubmit)="deleteUser()">
-  <label for="username">Nombre de usuario:</label>
-  <input type="text" id="username" name="username" [(ngModel)]="username">
-  <button type="submit">Eliminar</button>
-</form>
+<div class="container"> 
+  <form (ngSubmit)="deleteUser()">
+    <label for="username">Nombre de usuario:</label>
+    <input type="text" id="username" name="username" [(ngModel)]="username">
+    <button type="submit">Eliminar</button>
+  </form>
 
-<table class="user-table">
-  <thead>
-    <tr>
-      <th>Nombre de usuario</th>
-      <th>Email</th>
-      <th>Rol</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let user of users">
-      <td>{{ user.username }}</td>
-      <td>{{ user.email }}</td>
-      <td>{{ user.roles }}</td>
-    </tr>
-  </tbody>
-</table>
+  <table class="user-table">
+    <thead>
+      <tr>
+        <th>Nombre de usuario</th>
+        <th>Email</th>
+        <th>Rol</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.username }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.roles }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-<!-- <div class="container">
+<!-- <div class="container"> 
   <header class="jumbotron">
     <p>{{ content }}</p>
   </header>

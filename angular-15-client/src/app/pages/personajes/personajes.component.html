@@ -1,12 +1,12 @@
 <form [formGroup]="formGroup" (ngSubmit)="cargarPersonajes()" class="personajes-form">
   <div>
-    <label for="limit">Límite:</label>
-    <select id="limit" formControlName="limit" required>
-      <option *ngFor="let page of getPageNumbers()" [value]="(page + 1) * charactersPerPage">
+    <label for="offset">Rango:</label>
+    <select id="offset" formControlName="offset" required>
+      <option *ngFor="let page of getPageNumbers()" [value]="(page) * charactersPerPage">
         {{ getDisplayedRange(page) }}
       </option>
     </select>
-    <div *ngIf="formGroup?.get('limit')?.invalid && formGroup?.get('limit')?.touched" class="error-message">
+    <div *ngIf="formGroup?.get('offset')?.invalid && formGroup?.get('offset')?.touched" class="error-message">
       El límite es requerido y debe ser un número mayor o igual a cero.
     </div>
   </div>

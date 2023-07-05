@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../_services/auth.service';
 import { StorageService } from '../_services/storage.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -41,6 +42,17 @@ export class LoginComponent implements OnInit {
       error: err => {
         this.errorMessage = err.error.message;
         this.isLoginFailed = true;
+      
+        Swal.fire({
+          icon: 'error',
+          title: 'Error en el inicio de sesión',
+          text: err.error.message,
+          confirmButtonText: 'Ok',
+        }).then((result) => {
+          if (result.isConfirmed) {
+            this.reloadPage();
+          }
+        });
       }
     });
   }

@@ -1,3 +1,7 @@
+.swal2-container {
+  z-index: 9999;
+}
+
 label {
   display: block;
   margin-top: 10px;
@@ -29,4 +33,11 @@ label {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
+}
+
+.alert-success {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }

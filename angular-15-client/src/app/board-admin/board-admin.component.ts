@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { listUserService } from '../_services/list-user.service';
 import { UserService } from '../_services/user.service';
 import { User } from '../interfaces/user.model';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-board-admin',
@@ -43,12 +44,23 @@ export class BoardAdminComponent implements OnInit {
     this.listUserService.deleteUserByUsername(this.username)
       .subscribe(
         response => {
-          console.log(response); // Maneja la respuesta del servidor según tus necesidades
-          // Recargar la página después de eliminar el usuario
-          window.location.reload();
+          Swal.fire({
+            icon: 'success',
+            title: 'Usuario eliminado con exito',
+            confirmButtonText: 'Ok',
+          }).then((result) => {
+            if (result.isConfirmed) {
+              window.location.reload();
+            }
+          });
+          
         },
         error => {
-          console.error(error); // Maneja el error según tus necesidades
+          Swal.fire({
+            icon: 'error',
+            title: 'El usuario que quieres eliminar no existe',
+            confirmButtonText: 'Ok',
+          })
         }
       );
   }

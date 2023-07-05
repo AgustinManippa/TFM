@@ -19,7 +19,7 @@ export class ComicsComponent {
     private readonly formBuilder: FormBuilder
   ) {
     this.formGroup = this.formBuilder.group({
-      limit: [this.comicsPerPage, [Validators.required, Validators.min(1)]],
+      offset: [0, [Validators.required, Validators.min(0)]],
     });
   }
 
@@ -38,8 +38,8 @@ export class ComicsComponent {
 
   loadComics() {
     if (this.formGroup.valid) {
-      const limit = parseInt(this.formGroup.get('limit')?.value, 10) || 1;
-      const offset = limit - 49;
+      const limit = 50;
+      const offset = parseInt(this.formGroup.get('offset')?.value, 10) || 0;
 
       // Borra la lista de comics existente
       this.comics = [];
@@ -64,7 +64,7 @@ export class ComicsComponent {
   }
 
   getDisplayedRange(page: number): string {
-    const startRange = page * this.comicsPerPage + 1;
+    const startRange = page * this.comicsPerPage;
     const endRange = Math.min((page + 1) * this.comicsPerPage, this.maxComics);
     return `${startRange}-${endRange}`;
   }

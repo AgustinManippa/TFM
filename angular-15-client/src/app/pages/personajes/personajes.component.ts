@@ -19,7 +19,7 @@ export class PersonajesComponent {
     private readonly formBuilder: FormBuilder
   ) {
     this.formGroup = this.formBuilder.group({
-      limit: [this.charactersPerPage, [Validators.required, Validators.min(1)]],
+      offset: [0, [Validators.required, Validators.min(0)]],
     });
   }
 
@@ -38,11 +38,9 @@ export class PersonajesComponent {
 
   cargarPersonajes() {
     if (this.formGroup.valid) {
-      const limit = parseInt(this.formGroup.get('limit')?.value, 10) || 1;
-      const offset = limit-49;
+      const limit = 50;
+      let offset = parseInt(this.formGroup.get('offset')?.value, 10) || 0;
 
-      console.log(offset)
-          
       // Borra la lista de personajes existente
       this.characters = [];
     
@@ -66,7 +64,7 @@ export class PersonajesComponent {
   }
 
   getDisplayedRange(page: number): string {
-    const startRange = page * this.charactersPerPage + 1;
+    const startRange = page * this.charactersPerPage;
     const endRange = Math.min((page + 1) * this.charactersPerPage, this.maxCharacters);
     return `${startRange}-${endRange}`;
   }

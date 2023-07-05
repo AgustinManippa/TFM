@@ -23,7 +23,7 @@ export class SeriesComponent {
     private readonly formBuilder: FormBuilder
   ) {
     this.formGroup = this.formBuilder.group({
-      limit: [this.seriesPerPage, [Validators.required, Validators.min(1)]],
+      offset: [0, [Validators.required, Validators.min(0)]],
     });
   }
 
@@ -42,8 +42,8 @@ export class SeriesComponent {
 
   cargarSeries() {
     if (this.formGroup.valid) {
-      const limit = parseInt(this.formGroup.get('limit')?.value, 10) || 1;
-      const offset = limit - 49;
+      const limit = 50;
+      const offset = parseInt(this.formGroup.get('offset')?.value, 10) || 0;
 
       // Borra la lista de series existente
       this.series = [];
@@ -71,7 +71,7 @@ export class SeriesComponent {
   }
 
   getDisplayedRange(page: number): string {
-    const startRange = page * this.seriesPerPage + 1;
+    const startRange = page * this.seriesPerPage;
     const endRange = Math.min((page + 1) * this.seriesPerPage, this.maxSeries);
     return `${startRange}-${endRange}`;
   }

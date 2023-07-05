@@ -1,3 +1,7 @@
+.swal2-container {
+  z-index: 9999;
+}
+
 label {
   display: block;
   margin-top: 10px;
