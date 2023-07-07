@@ -1,26 +1,46 @@
 .terms-conditions {
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.terms-conditions-title {
+  margin-top: 0;
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.terms-condition {
+  margin-bottom: 20px;
+}
+
+.terms-condition-title {
+  margin-top: 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.terms-condition-content {
+  margin-bottom: 0;
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .terms-conditions {
     padding: 20px;
-    background-color: #f8f8f8;
-    border: 1px solid #ccc;
-    border-radius: 5px;
   }
-  
+
   .terms-conditions-title {
-    margin-top: 0;
     font-size: 24px;
-    font-weight: bold;
-    text-align: center;
   }
-  
-  .terms-condition {
-    margin-bottom: 20px;
-  }
-  
+
   .terms-condition-title {
-    margin-top: 0;
     font-size: 18px;
   }
-  
+
   .terms-condition-content {
-    margin-bottom: 0;
+    font-size: 14px;
   }
+}

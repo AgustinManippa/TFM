@@ -1,65 +1,97 @@
 .series-form {
-    margin-bottom: 20px;
-  }
-  
+  margin-bottom: 20px;
+}
+
+.series-form label {
+  font-weight: bold;
+}
+
+.series-form select {
+  margin-left: 10px;
+}
+
+.error-message {
+  color: red;
+  margin-top: 5px;
+}
+
+.cargar {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cargar:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.series-heading {
+  margin-top: 20px;
+  font-size: 24px;
+}
+
+.series-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  background-color: #fff;
+}
+
+.series-table th,
+.series-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+  border-color: #000;
+}
+
+.series-table img {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.no-series {
+  margin-top: 20px;
+  font-style: italic;
+  color: #777;
+}
+
+.no-series p {
+  margin: 0;
+}
+
+@media (max-width: 576px) {
   .series-form label {
-    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
   }
-  
+
   .series-form select {
-    margin-left: 10px;
+    margin-left: 0;
+    margin-bottom: 10px;
   }
-  
-  .error-message {
-    color: red;
-    margin-top: 5px;
-  }
-  
+
   .cargar {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    padding: 8px 16px;
   }
-  
-  .cargar:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-  }
-  
+
   .series-heading {
-    margin-top: 20px;
-    font-size: 24px;
+    font-size: 20px;
+    margin-top: 15px;
   }
-  
-  .series-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-    background-color: #fff;
-  }
-  
+
   .series-table th,
   .series-table td {
-    padding: 10px;
-    text-align: left;
-    border-bottom: 1px solid #ccc;
-    border-color: #000;
+    padding: 6px;
+    font-size: 14px;
   }
-  
+
   .series-table img {
-    max-width: 100px;
-    max-height: 100px;
+    max-width: 80px;
+    max-height: 80px;
   }
-  
-  .no-series {
-    margin-top: 20px;
-    font-style: italic;
-    color: #777;
-  }
-  
-  .no-series p {
-    margin: 0;
-  }
+}

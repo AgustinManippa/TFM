@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MarvelService } from 'src/app/_services/marvel.service';
 import { CharacterResult, GetCharacterResult } from 'src/app/interfaces/marvel.model';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-personajes',
@@ -40,17 +41,29 @@ export class PersonajesComponent {
     if (this.formGroup.valid) {
       const limit = 50;
       let offset = parseInt(this.formGroup.get('offset')?.value, 10) || 0;
-
+  
       // Borra la lista de personajes existente
       this.characters = [];
-    
+  
+      Swal.fire({
+        title: 'Cargando',
+        html: 'Espere un momento...',
+        allowOutsideClick: false,
+        showConfirmButton: false,
+        willOpen: () => {
+          Swal.showLoading();
+        },
+      });
+  
       this.marvelService.getPersonajes(limit, offset).subscribe(
         (response: GetCharacterResult) => {
           this.characters = response?.results || [];
+          Swal.close(); // Cierra el diálogo de SweetAlert
         },
         (error: any) => {
           console.error(error);
           // Manejar el error aquí
+          Swal.close(); // Cierra el diálogo de SweetAlert en caso de error
         }
       );
     } else {

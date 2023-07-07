@@ -1,46 +1,52 @@
 .enciclopedia-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  h1 {
-    text-align: center;
-  }
-  
-  .search-container {
-    margin-bottom: 20px;
-  }
-  
-  label {
-    font-weight: bold;
-    margin-right: 10px;
-  }
-  
-  input[type="number"] {
-    padding: 5px;
-    width: 100px;
-  }
-  
-  button {
-    padding: 5px 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .error-message {
-    background-color: #f8d7da;
-    color: #721c24;
-    padding: 10px;
-    margin-bottom: 20px;
-  }
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
 
-  .character{
-    margin-top: 10px;
-  }
+h1 {
+  text-align: center;
+}
 
-  .character p{
-    color: #d3c2c2;
-  }
+.search-container {
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+input[type="number"] {
+  padding: 5px;
+  width: 100px;
+}
+
+button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.error-message {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.character {
+  margin-top: 10px;
+}
+
+.character p {
+  color: #d3c2c2;
+}
+
+.character img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+}

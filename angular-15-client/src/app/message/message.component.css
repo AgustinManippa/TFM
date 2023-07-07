@@ -1,12 +1,16 @@
 .message-container {
   display: flex;
+  flex-wrap: wrap; /* Agregar esta línea */
   justify-content: center;
-  align-items: center;
-  height: 100vh;
+  align-items: flex-start;
+  min-height: calc(100vh - 60px); /* Restar la altura del footer */
+  padding-bottom: 60px; /* Agregar un espacio para el footer */
 }
 
+
 .conversation-list {
-  width: 50%;
+  flex: 1;
+  max-width: 50%;
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.8);
   margin-right: 5px;
@@ -14,22 +18,25 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.conversation-list h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
-  text-align: center;
-}
-
 .message-form {
-  width: 50%;
+  flex: 1;
+  max-width: 50%;
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.message-form h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
-  text-align: center;
+@media (max-width: 768px) {
+  .message-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .conversation-list,
+  .message-form {
+    max-width: 100%;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
 }

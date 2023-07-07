@@ -8,18 +8,21 @@ import { ProfileComponent } from './profile/profile.component';
 import { BoardUserComponent } from './board-user/board-user.component';
 import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
+import { AuthGuard } from './_shared/auth.guard';
+import { ModGuard } from './_shared/mod.guard';
+import { AdminGuard } from './_shared/admin.guard';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
-  { path: 'message', loadChildren: () => import('./message/message-routing.module').then(m => m.MessageRoutingModule) },
-  { path: '', loadChildren: () => import('./pages/pages-routing.module').then(m => m.PagesRoutingModule) },
-  { path: '', loadChildren: () => import('./footer-content/footer-content-routing.module').then(m => m.PagesRoutingModule) },
+  { path: '', component: HomeComponent },
+  { path: 'message', loadChildren: () => import('./message/message-routing.module').then(m => m.MessageRoutingModule), canActivate: [AuthGuard] },
+  { path: '', loadChildren: () => import('./pages/pages-routing.module').then(m => m.PagesRoutingModule), canActivate: [AuthGuard]  },
+  { path: '', loadChildren: () => import('./footer-content/footer-content-routing.module').then(m => m.FooterRoutingModule), canActivate: [AuthGuard]  },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'profile', component: ProfileComponent },
-  { path: 'user', component: BoardUserComponent },
-  { path: 'mod', component: BoardModeratorComponent },
-  { path: 'admin', component: BoardAdminComponent },
+  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
+  { path: 'user', component: BoardUserComponent, canActivate: [AuthGuard] },
+  { path: 'mod', component: BoardModeratorComponent, canActivate: [AuthGuard,ModGuard] },
+  { path: 'admin', component: BoardAdminComponent, canActivate: [AuthGuard,AdminGuard] },
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 

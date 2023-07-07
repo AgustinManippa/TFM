@@ -37,7 +37,7 @@ export class MessageFormComponent {
   
       // Suscribirse a la respuesta del método sendMessage
       this.conversationService.sendMessageResponse$.subscribe((response: any) => {
-        console.log(response.error);
+        //no entra nunca aca
         if (response.error === 'El destinatario no existe') {
           Swal.fire({
             icon: 'error',

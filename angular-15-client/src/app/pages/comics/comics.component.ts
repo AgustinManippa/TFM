@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MarvelService } from 'src/app/_services/marvel.service';
 import { ComicsResult, GetComicsResult } from 'src/app/interfaces/marvel.model';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-comics',
@@ -44,13 +45,26 @@ export class ComicsComponent {
       // Borra la lista de comics existente
       this.comics = [];
 
+      Swal.fire({
+        title: 'Cargando',
+        html: 'Espere un momento...',
+        allowOutsideClick: false,
+        showConfirmButton: false,
+        willOpen: () => {
+          Swal.showLoading();
+        },
+      });
+
       this.marvelService.getComics(limit, offset).subscribe(
         (response: GetComicsResult) => {
           this.comics = response?.results || [];
+          Swal.close(); // Cierra el diálogo de SweetAlert
         },
         (error: any) => {
           console.error(error);
           // Manejar el error aquí
+          Swal.close(); // Cierra el diálogo de SweetAlert en caso de error
+
         }
       );
     } else {

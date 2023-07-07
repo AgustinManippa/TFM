@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -15,28 +14,17 @@ import { BoardModeratorComponent } from './board-moderator/board-moderator.compo
 import { BoardUserComponent } from './board-user/board-user.component';
 
 import { httpInterceptorProviders } from './_helpers/http.interceptor';
-import { PersonajesComponent } from './pages/personajes/personajes.component';
-import { SeriesComponent } from './pages/series/series.component';
-import { PagesComponent } from './pages/pages.component';
-import { ComicsComponent } from './pages/comics/comics.component';
-import { MarvelService } from './_services/marvel.service';
 import { ConversationListComponent } from './message/conversation-list/conversation-list.component';
 import { MessageFormComponent } from './message/message-form/message-form.component';
-import { ConversationService } from './_services/conversation.service';
 import { MessageComponent } from './message/message.component';
 import { listUserService } from './_services/list-user.service';
 import { JwtHelperService, JwtModule } from '@auth0/angular-jwt';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
-import { EnciclopediaComponent } from './pages/enciclopedia/enciclopedia.component';
-import { ExtrasComponent } from './pages/extras/extras.component';
-import { AboutUsComponent } from './footer-content/about-us/about-us.component';
-import { ServicesComponent } from './footer-content/services/services.component';
-import { ContactComponent } from './footer-content/contact/contact.component';
-import { FooterContentComponent } from './footer-content/footer-content.component';
-import { BlogComponent } from './footer-content/blog/blog.component';
-import { FAQsComponent } from './footer-content/faqs/faqs.component';
-import { TermsConditionsComponent } from './footer-content/terms-conditions/terms-conditions.component';
-import { PrivacyPolicyComponent } from './footer-content/privacy-policy/privacy-policy.component';
+import { PagesModule } from './pages/pages.module';
+import { ConversationService } from './_services/conversation.service';
+import { FooterModule } from './footer-content/footer-content.module';
+import { NavComponent } from './layout/nav/nav.component';
+import { FooterComponent } from './layout/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -48,24 +36,11 @@ import { PrivacyPolicyComponent } from './footer-content/privacy-policy/privacy-
     BoardAdminComponent,
     BoardModeratorComponent,
     BoardUserComponent,
-    PersonajesComponent,
-    SeriesComponent,
-    PagesComponent,
-    ComicsComponent,
-    EnciclopediaComponent,
-    ExtrasComponent,
-    MessageComponent,
-    MessageFormComponent,
     ConversationListComponent,
-    AboutUsComponent,
-    ServicesComponent,
-    ContactComponent,
-    FooterContentComponent,
-    BlogComponent,
-    FAQsComponent,
-    TermsConditionsComponent,
-    PrivacyPolicyComponent
-  
+    MessageFormComponent,
+    MessageComponent,
+    NavComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -73,6 +48,8 @@ import { PrivacyPolicyComponent } from './footer-content/privacy-policy/privacy-
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    PagesModule,
+    FooterModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: () => {
@@ -83,7 +60,8 @@ import { PrivacyPolicyComponent } from './footer-content/privacy-policy/privacy-
       },
     }),
   ],
-  providers: [httpInterceptorProviders,MarvelService,ConversationService,listUserService,JwtHelperService, { provide: LocationStrategy, useClass: HashLocationStrategy }
+
+  providers: [httpInterceptorProviders,ConversationService,listUserService,JwtHelperService, { provide: LocationStrategy, useClass: HashLocationStrategy }
 ],
   bootstrap: [AppComponent],
 })

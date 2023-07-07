@@ -72,3 +72,26 @@
   margin-top: 20px;
   text-align: center;
 }
+
+
+@media (max-width: 576px) {
+  .personajes-form label,
+  .personajes-form select {
+    margin-bottom: 5px;
+  }
+
+  .personajes-form .cargar {
+    padding: 8px 16px;
+  }
+
+  .personajes-heading {
+    font-size: 20px;
+    margin-top: 15px;
+  }
+
+  .personajes-table th,
+  .personajes-table td {
+    padding: 6px;
+    font-size: 14px;
+  }
+}

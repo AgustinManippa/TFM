@@ -2,49 +2,65 @@
   z-index: 9999;
 }
 
-form {
-    margin-bottom: 20px;
-    margin-top:  20px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: bold;
-  }
-  
-  input[type="text"] {
-    width: 200px;
-    padding: 5px;
-    font-size: 14px;
-  }
-  
-  button {
-    padding: 5px 10px;
-    font-size: 14px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .user-table {
+form.delete-form {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+form input[type="text"] {
+  width: 200px;
+  padding: 5px;
+  font-size: 14px;
+}
+
+form button {
+  padding: 5px 10px;
+  font-size: 14px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.user-table th,
+.user-table td {
+  padding: 8px;
+  border: 1px solid #ccc;
+}
+
+.user-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  text-align: left;
+}
+
+.user-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Media queries */
+@media only screen and (max-width: 768px) {
+  form input[type="text"] {
     width: 100%;
-    border-collapse: collapse;
   }
-  
-  .user-table th,
-  .user-table td {
-    padding: 8px;
-    border: 1px solid #ccc;
+
+  form button {
+    margin-top: 10px;
+    width: 100%;
   }
-  
-  .user-table th {
-    background-color: #f2f2f2;
-    font-weight: bold;
-    text-align: left;
-  }
-  
-  .user-table tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
-  }
+}
