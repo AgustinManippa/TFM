@@ -1,17 +1,23 @@
+// Controlador de Marvel (marvel controller):
+
 const axios = require('axios');
 var crypto = require('crypto');
 const env = require("../enviroment"); 
 
+// Función auxiliar para realizar una solicitud a la API de Marvel
 const makeMarvelRequest = async (url, req, res) => {
+  // Generar la información necesaria para la autenticación en la API de Marvel
   const timeStamp = Date.now();
   const hash = crypto
     .createHash('md5')
     .update(timeStamp + env.privateKey + env.publicKey)
     .digest('hex');
 
+  // Obtener los parámetros limit y offset de la solicitud
   const limit = parseInt(req.query.limit, 10);
   const offset = parseInt(req.query.offset, 10);
 
+  // Validar los parámetros limit y offset
   if (
     Number.isNaN(limit) ||
     !Number.isInteger(limit) ||
@@ -26,6 +32,7 @@ const makeMarvelRequest = async (url, req, res) => {
   }
 
   try {
+    // Realizar la solicitud a la API de Marvel utilizando axios
     const response = await axios.get(url, {
       params: {
         ts: timeStamp,
@@ -35,6 +42,7 @@ const makeMarvelRequest = async (url, req, res) => {
         offset: offset,
       },
     });
+    // Enviar la respuesta con los datos obtenidos de la API de Marvel
     res.json(response.data.data);
   } catch (error) {
     console.error(error);
@@ -42,22 +50,27 @@ const makeMarvelRequest = async (url, req, res) => {
   }
 };
 
+// Obtener personajes de Marvel
 exports.getCharacters = async (req, res) => {
   const url = 'https://gateway.marvel.com/v1/public/characters';
   await makeMarvelRequest(url, req, res);
 };
 
+// Obtener cómics de Marvel
 exports.getComics = async (req, res) => {
   const url = 'https://gateway.marvel.com/v1/public/comics';
   await makeMarvelRequest(url, req, res);
 };
 
+// Obtener series de Marvel
 exports.getSeries = async (req, res) => {
   const url = 'https://gateway.marvel.com/v1/public/series';
   await makeMarvelRequest(url, req, res);
 };
 
+// Función auxiliar para obtener datos de Marvel según una URL específica
 const getMarvelData = async (url) => {
+  // Generar la información necesaria para la autenticación en la API de Marvel
   const timeStamp = Date.now();
   const hash = crypto
     .createHash('md5')
@@ -65,6 +78,7 @@ const getMarvelData = async (url) => {
     .digest('hex');
 
   try {
+    // Realizar la solicitud a la API de Marvel utilizando axios
     const response = await axios.get(url, {
       params: {
         ts: timeStamp,
@@ -72,6 +86,7 @@ const getMarvelData = async (url) => {
         hash: hash,
       },
     });
+    // Devolver los datos obtenidos de la API de Marvel
     return response.data.data;
   } catch (error) {
     console.error(error);
@@ -79,6 +94,7 @@ const getMarvelData = async (url) => {
   }
 };
 
+// Obtener un personaje de Marvel por su ID
 exports.getCharacterById = async (req, res) => {
   const characterId = req.params.characterId;
   const url = `https://gateway.marvel.com/v1/public/characters/${characterId}`;
@@ -91,6 +107,7 @@ exports.getCharacterById = async (req, res) => {
   }
 };
 
+// Obtener cómics de un personaje de Marvel
 exports.getCharacterComics = async (req, res) => {
   const characterId = req.params.characterId;
   const url = `https://gateway.marvel.com/v1/public/characters/${characterId}/comics`;
@@ -103,6 +120,7 @@ exports.getCharacterComics = async (req, res) => {
   }
 };
 
+// Obtener eventos de un personaje de Marvel
 exports.getCharacterEvents = async (req, res) => {
   const characterId = req.params.characterId;
   const url = `https://gateway.marvel.com/v1/public/characters/${characterId}/events`;
@@ -115,6 +133,7 @@ exports.getCharacterEvents = async (req, res) => {
   }
 };
 
+// Obtener series de un personaje de Marvel
 exports.getCharacterSeries = async (req, res) => {
   const characterId = req.params.characterId;
   const url = `https://gateway.marvel.com/v1/public/characters/${characterId}/series`;
@@ -127,6 +146,7 @@ exports.getCharacterSeries = async (req, res) => {
   }
 };
 
+// Obtener historias de un personaje de Marvel
 exports.getCharacterStories = async (req, res) => {
   const characterId = req.params.characterId;
   const url = `https://gateway.marvel.com/v1/public/characters/${characterId}/stories`;

@@ -1,41 +1,41 @@
 .info-table {
   width: 100%;
   border-collapse: collapse;
-  margin-bottom: 20px;
+  margin-bottom: 20px; /* Margen inferior de 20px */
 }
 
 .info-table th,
 .info-table td {
-  border: 1px solid #ddd;
-  padding: 8px;
+  border: 1px solid #ddd; /* Borde de 1px sólido con color #ddd */
+  padding: 8px; /* Espaciado interno de 8px */
   background-color: #fff; /* Fondo blanco */
 }
 
 .info-table th {
-  background-color: #f2f2f2;
+  background-color: #f2f2f2; /* Fondo de los encabezados de columna con color #f2f2f2 */
 }
 
 .error-message {
-  color: red;
-  margin-bottom: 10px;
+  color: red; /* Color rojo para mensajes de error */
+  margin-bottom: 10px; /* Margen inferior de 10px para mensajes de error */
 }
 
 .section-title {
-  font-size: 24px;
-  font-weight: bold;
-  color: #ebdfdf;
-  margin-top: 20px;
-  padding: 10px;
-  background-color: #0a0a0a;
-  border-radius: 5px;
+  font-size: 24px; /* Tamaño de fuente de 24px */
+  font-weight: bold; /* Negrita */
+  color: #ebdfdf; /* Color de texto #ebdfdf */
+  margin-top: 20px; /* Margen superior de 20px */
+  padding: 10px; /* Espaciado interno de 10px */
+  background-color: #0a0a0a; /* Fondo con color #0a0a0a */
+  border-radius: 5px; /* Borde redondeado de 5px */
 }
 
 @media (max-width: 576px) {
   .info-table {
-    font-size: 14px;
+    font-size: 14px; /* Tamaño de fuente reducido para pantallas pequeñas */
   }
 
   .section-title {
-    font-size: 18px;
+    font-size: 18px; /* Tamaño de fuente reducido para pantallas pequeñas */
   }
 }

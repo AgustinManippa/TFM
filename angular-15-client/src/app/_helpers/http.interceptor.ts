@@ -11,11 +11,12 @@ import { EventData } from '../_shared/event.class';
 @Injectable()
 export class HttpRequestInterceptor implements HttpInterceptor {
   private isRefreshing = false;
-  
+
   constructor(private storageService: StorageService, private eventBusService: EventBusService) { }
-  
-  
+
+
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    // Clonar la solicitud y establecer withCredentials en true para incluir las cookies en la solicitud
     req = req.clone({
       withCredentials: true,
     });
@@ -39,15 +40,18 @@ export class HttpRequestInterceptor implements HttpInterceptor {
     if (!this.isRefreshing) {
       this.isRefreshing = true;
 
+      // Verificar si el usuario está conectado y emitir un evento de cierre de sesión
       if (this.storageService.isLoggedIn()) {
         this.eventBusService.emit(new EventData('logout', null));
       }
     }
 
+    // Continuar con la siguiente solicitud
     return next.handle(request);
   }
 }
 
+// Proveedor de interceptores HTTP
 export const httpInterceptorProviders = [
   { provide: HTTP_INTERCEPTORS, useClass: HttpRequestInterceptor, multi: true },
 ];

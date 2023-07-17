@@ -6,16 +6,21 @@
         {{ getDisplayedRange(page) }}
       </option>
     </select>
+    <!-- Mensaje de error si el límite es inválido -->
     <div *ngIf="formGroup?.get('offset')?.invalid && formGroup?.get('offset')?.touched" class="error-message">
       El límite es requerido y debe ser un número mayor o igual a cero.
     </div>
   </div>
 
+  <!-- Botón para cargar las series -->
   <button type="submit" class="cargar" [disabled]="formGroup.invalid" (click)="cargarSeries()">Cargar Series</button>
 </form>
 
+<!-- Contenedor de la lista de series -->
 <div *ngIf="series.length > 0">
+  <!-- Título de la lista de series -->
   <h2 class="series-heading">Lista de series:</h2>
+  <!-- Tabla de series -->
   <table class="series-table">
     <thead>
       <tr>
@@ -25,11 +30,14 @@
       </tr>
     </thead>
     <tbody>
+      <!-- Iteración sobre las series -->
       <tr *ngFor="let serie of series">
         <td>{{ serie.title }}</td>
         <td>{{ serie.description}}</td>
         <td>
+          <!-- Botón para mostrar la imagen -->
           <button (click)="mostrarImagen(serie)">Mostrar imagen</button>
+          <!-- Contenedor de la imagen (se muestra solo si showImage es true) -->
           <div *ngIf="serie.showImage">
             <img [src]="getSeriesImageUrl(serie.thumbnail)" alt="Serie Image">
           </div>
@@ -39,6 +47,7 @@
   </table>
 </div>
 
+<!-- Mensaje si no se encontraron series -->
 <div *ngIf="series.length === 0" class="no-series">
   <p>No se encontraron series.</p>
 </div>

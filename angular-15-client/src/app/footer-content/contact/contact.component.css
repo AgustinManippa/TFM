@@ -1,60 +1,60 @@
 .contact {
-  text-align: center;
-  padding: 40px;
-  background-color: #f8f8f8;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Alinear el contenido al centro del elemento */
+  padding: 40px; /* Espaciado interno de 40px */
+  background-color: #f8f8f8; /* Color de fondo */
+  border-radius: 5px; /* Borde redondeado con un radio de 5px */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
 }
 
 .contact h3 {
-  margin-bottom: 20px;
-  color: #333;
-  font-size: 28px;
-  font-weight: bold;
+  margin-bottom: 20px; /* Margen inferior de 20px */
+  color: #333; /* Color del texto */
+  font-size: 28px; /* Tamaño de fuente de 28px */
+  font-weight: bold; /* Fuente en negrita */
 }
 
 .contact p {
-  margin-bottom: 15px;
-  color: #666;
-  font-size: 18px;
-  line-height: 1.5;
+  margin-bottom: 15px; /* Margen inferior de 15px */
+  color: #666; /* Color del texto */
+  font-size: 18px; /* Tamaño de fuente de 18px */
+  line-height: 1.5; /* Altura de línea de 1.5 para un espaciado adecuado entre líneas */
 }
 
 .contact ul {
-  list-style: none;
-  padding: 0;
-  margin-top: 20px;
+  list-style: none; /* Eliminar los estilos de viñetas */
+  padding: 0; /* Eliminar el espacio interno */
+  margin-top: 20px; /* Margen superior de 20px */
 }
 
 .contact ul li {
-  margin-bottom: 10px;
-  color: #666;
-  font-size: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin-bottom: 10px; /* Margen inferior de 10px */
+  color: #666; /* Color del texto */
+  font-size: 18px; /* Tamaño de fuente de 18px */
+  display: flex; /* Mostrar los elementos en línea */
+  align-items: center; /* Alinear verticalmente los elementos al centro */
+  justify-content: center; /* Alinear horizontalmente los elementos al centro */
 }
 
 .contact ul li strong {
-  color: #333;
-  font-weight: bold;
-  margin-right: 5px;
+  color: #333; /* Color del texto */
+  font-weight: bold; /* Fuente en negrita */
+  margin-right: 5px; /* Margen derecho de 5px */
 }
 
 @media (max-width: 768px) {
   .contact {
-    padding: 20px;
+    padding: 20px; /* Espaciado interno de 20px en dispositivos con un ancho máximo de 768px */
   }
 
   .contact h3 {
-    font-size: 24px;
+    font-size: 24px; /* Tamaño de fuente de 24px en dispositivos con un ancho máximo de 768px */
   }
 
   .contact p {
-    font-size: 16px;
+    font-size: 16px; /* Tamaño de fuente de 16px en dispositivos con un ancho máximo de 768px */
   }
 
   .contact ul li {
-    font-size: 16px;
+    font-size: 16px; /* Tamaño de fuente de 16px en dispositivos con un ancho máximo de 768px */
   }
 }

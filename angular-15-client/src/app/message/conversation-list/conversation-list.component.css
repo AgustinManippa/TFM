@@ -1,89 +1,90 @@
+/* Estilos para el componente de lista de conversaciones */
+
 .conversation-list {
-  max-width: 500px;
-  margin: 0 auto;
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 500px; /* Ancho máximo del contenedor de la lista de conversaciones */
+  margin: 0 auto; /* Centra el contenedor horizontalmente en la página */
+  background-color: rgba(255, 255, 255, 0.8); /* Color de fondo con transparencia */
+  padding: 20px; /* Espaciado interno */
+  border-radius: 5px; /* Borde redondeado */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
 }
 
 h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 24px;
+  text-align: center; /* Centra el título */
+  margin-bottom: 20px; /* Espaciado inferior */
+  font-size: 24px; /* Tamaño de fuente */
 }
 
 .search-bar {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
+  display: flex; /* Muestra los elementos del formulario en línea */
+  justify-content: center; /* Centra horizontalmente los elementos del formulario */
+  margin-bottom: 20px; /* Espaciado inferior */
 }
 
 form {
-  display: flex;
-  align-items: center;
+  display: flex; /* Muestra los elementos del formulario en línea */
+  align-items: center; /* Alinea verticalmente los elementos del formulario */
 }
 
 input[type="text"] {
-  padding: 8px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  margin-right: 10px;
+  padding: 8px; /* Espaciado interno */
+  border-radius: 4px; /* Borde redondeado */
+  border: 1px solid #ccc; /* Borde con color y grosor */
+  margin-right: 10px; /* Espaciado derecho */
 }
 
 button {
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #4caf50;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  width: 100%;
+  padding: 10px 20px; /* Espaciado interno (vertical, horizontal) */
+  font-size: 16px; /* Tamaño de fuente */
+  background-color: #4caf50; /* Color de fondo */
+  color: #fff; /* Color de texto */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Borde redondeado */
+  cursor: pointer; /* Cambia el cursor al pasar por encima */
+  width: 100%; /* Ancho del botón al 100% del contenedor */
 }
 
-
 ul {
-  list-style: none;
-  padding: 0;
+  list-style: none; /* Sin viñetas */
+  padding: 0; /* Sin espaciado interno */
 }
 
 .conversation-item {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  margin-bottom: 10px;
+  padding: 10px; /* Espaciado interno */
+  border: 1px solid #ccc; /* Borde con color y grosor */
+  border-radius: 4px; /* Borde redondeado */
+  margin-bottom: 10px; /* Espaciado inferior */
 }
 
 .conversation-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 5px;
+  display: flex; /* Muestra los elementos del encabezado en línea */
+  justify-content: space-between; /* Espacio equitativo entre los elementos del encabezado */
+  align-items: center; /* Alinea verticalmente los elementos del encabezado */
+  margin-bottom: 5px; /* Espaciado inferior */
 }
 
 h3 {
-  margin: 0;
-  font-size: 16px;
+  margin: 0; /* Sin margen */
+  font-size: 16px; /* Tamaño de fuente */
 }
 
 .timestamp {
-  font-size: 12px;
-  color: #999;
+  font-size: 12px; /* Tamaño de fuente */
+  color: #999; /* Color de texto */
 }
 
 .content {
-  margin-top: 0;
-  font-size: 14px;
+  margin-top: 0; /* Sin margen superior */
+  font-size: 14px; /* Tamaño de fuente */
 }
 
 .reset {
-  margin-left: 5px;
+  margin-left: 5px; /* Espaciado izquierdo */
 }
 
 @media (max-width: 600px) {
   button {
-    padding: 8px 16px;
-    font-size: 14px;
+    padding: 8px 16px; /* Espaciado interno (vertical, horizontal) */
+    font-size: 14px; /* Tamaño de fuente */
   }
 }

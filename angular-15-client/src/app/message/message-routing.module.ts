@@ -7,18 +7,18 @@ import { MessageFormComponent } from './message-form/message-form.component';
 
 const routes: Routes = [
   {
-    path: '',
-    component: MessageComponent,
+    path: '', // Ruta raíz del módulo de mensajes
+    component: MessageComponent, // Componente principal del módulo de mensajes
     children: [
-      { path: 'coversation-list-component', component: ConversationListComponent },
-      { path: 'message-form-component', component: MessageFormComponent },
-      { path: '', redirectTo: 'home', pathMatch: 'full' }
+      { path: 'coversation-list-component', component: ConversationListComponent }, // Ruta para el componente de lista de conversaciones
+      { path: 'message-form-component', component: MessageFormComponent }, // Ruta para el componente del formulario de mensajes
+      { path: '', redirectTo: 'home', pathMatch: 'full' } // Redirección a 'home' si no se proporciona una ruta válida
     ]
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forChild(routes)], // Importar las rutas hijas del módulo de mensajes
   exports: [RouterModule]
 })
 export class MessageRoutingModule { }

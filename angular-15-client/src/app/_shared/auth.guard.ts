@@ -9,43 +9,13 @@ export class AuthGuard implements CanActivate {
   constructor(private storageService: StorageService, private router: Router) {}
 
   canActivate(): boolean {
-    const isLoggedIn = this.storageService.isLoggedIn();
+    const isLoggedIn = this.storageService.isLoggedIn(); // Verifica si el usuario ha iniciado sesión
 
-    if (!isLoggedIn) {
+    if (!isLoggedIn) { // Si el usuario no ha iniciado sesión
       this.router.navigate(['/login']); // Redirige a la página de inicio de sesión
-      return false;
+      return false; // Impide el acceso a la ruta protegida
     }
 
-    return true;
-  }
-
-  isAdmin(): boolean {
-  
-    const user = this.storageService.getUser();
-    const roles = user.roles;
-  
-    if (roles.includes('ROLE_ADMIN')) {
-      return true;
-    }
-  
-    console.log(roles)
-
-    this.router.navigate(['/']); // Redirige a la página principal si el usuario no tiene los roles requeridos
-    return false;
-  }
-
-  isMod(): boolean {
-    const user = this.storageService.getUser();
-    const roles = user.roles;
-  
-    if (roles.includes('ROLE_MODERATOR')) {
-      return true;
-    }
-  
-    console.log(roles)
-
-    this.router.navigate(['/']); // Redirige a la página principal si el usuario no tiene los roles requeridos
-    return false;
+    return true; // Permite el acceso a la ruta protegida
   }
 }
-

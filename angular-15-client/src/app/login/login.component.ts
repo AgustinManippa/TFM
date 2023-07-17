@@ -22,8 +22,8 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.storageService.isLoggedIn()) {
-      this.isLoggedIn = true;
-      this.roles = this.storageService.getUser().roles;
+      this.isLoggedIn = true; // Establece el estado de inicio de sesión como verdadero
+      this.roles = this.storageService.getUser().roles; // Obtiene los roles del usuario almacenados en el almacenamiento local
     }
   }
 
@@ -32,25 +32,25 @@ export class LoginComponent implements OnInit {
 
     this.authService.login(username, password).subscribe({
       next: data => {
-        this.storageService.saveUser(data);
+        this.storageService.saveUser(data); // Guarda los datos de usuario en el almacenamiento local
 
-        this.isLoginFailed = false;
-        this.isLoggedIn = true;
-        this.roles = this.storageService.getUser().roles;
-        this.reloadPage();
+        this.isLoginFailed = false; // Establece el estado de inicio de sesión fallido como falso
+        this.isLoggedIn = true; // Establece el estado de inicio de sesión como verdadero
+        this.roles = this.storageService.getUser().roles; // Obtiene los roles del usuario almacenados en el almacenamiento local
+        this.reloadPage(); // Recarga la página actual
       },
       error: err => {
-        this.errorMessage = err.error.message;
-        this.isLoginFailed = true;
-      
-        Swal.fire({
+        this.errorMessage = err.error.message; // Obtiene el mensaje de error del servidor
+        this.isLoginFailed = true; // Establece el estado de inicio de sesión fallido como verdadero
+
+        Swal.fire({ // Muestra una alerta de error utilizando SweetAlert2
           icon: 'error',
           title: 'Error en el inicio de sesión',
           text: err.error.message,
           confirmButtonText: 'Ok',
         }).then((result) => {
           if (result.isConfirmed) {
-            this.reloadPage();
+            this.reloadPage(); // Recarga la página actual después de hacer clic en 'Ok'
           }
         });
       }
@@ -58,6 +58,6 @@ export class LoginComponent implements OnInit {
   }
 
   reloadPage(): void {
-    window.location.reload();
+    window.location.reload(); // Recarga la página actual
   }
 }

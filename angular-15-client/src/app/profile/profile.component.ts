@@ -12,6 +12,7 @@ export class ProfileComponent implements OnInit {
   constructor(private storageService: StorageService) { }
 
   ngOnInit(): void {
-    this.currentUser = this.storageService.getUser();
+    // Inicialización del componente
+    this.currentUser = this.storageService.getUser(); // Obtiene el usuario actual del servicio de almacenamiento
   }
 }

@@ -3,22 +3,20 @@ import { CanActivate, Router } from '@angular/router';
 import { StorageService } from '../_services/storage.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ModGuard implements CanActivate {
   constructor(private storageService: StorageService, private router: Router) {}
 
   canActivate(): boolean {
-    const user = this.storageService.getUser();
-    const roles = user.roles;
-  
-    if (roles.includes('ROLE_MODERATOR')) {
-      return true;
-    }
-  
-    console.log(roles)
+    const user = this.storageService.getUser(); // Obtener información del usuario actual
+    const roles = user.roles; // Obtener los roles del usuario
 
-    this.router.navigate(['/']); // Redirige a la página principal si el usuario no tiene los roles requeridos
-    return false;
+    if (roles.includes('ROLE_MODERATOR')) { // Verificar si el usuario tiene el rol de "moderador"
+      return true; // Permitir el acceso a la ruta protegida
+    }
+
+    this.router.navigate(['/']); // Redirigir al usuario a la página principal si no tiene los roles requeridos
+    return false; // Denegar el acceso a la ruta protegida
   }
 }

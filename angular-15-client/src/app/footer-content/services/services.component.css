@@ -1,56 +1,56 @@
 .services {
-  text-align: center;
-  padding: 40px;
-  background-color: #ffffff;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Alinear el contenido al centro */
+  padding: 40px; /* Espaciado interno de 40px */
+  background-color: #ffffff; /* Color de fondo */
+  border-radius: 5px; /* Borde redondeado con un radio de 5px */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
 }
 
 .services h3 {
-  margin-bottom: 20px;
-  color: #333333;
-  font-size: 28px;
+  margin-bottom: 20px; /* Margen inferior de 20px */
+  color: #333333; /* Color del texto */
+  font-size: 28px; /* Tamaño de fuente de 28px */
 }
 
 .services p {
-  margin-bottom: 15px;
-  color: #666666;
-  font-size: 18px;
+  margin-bottom: 15px; /* Margen inferior de 15px */
+  color: #666666; /* Color del texto */
+  font-size: 18px; /* Tamaño de fuente de 18px */
 }
 
 .services ul {
-  list-style: none;
-  padding: 0;
-  margin-top: 20px;
-  text-align: left;
+  list-style: none; /* Eliminar viñetas de la lista */
+  padding: 0; /* Eliminar el espaciado interno de la lista */
+  margin-top: 20px; /* Margen superior de 20px */
+  text-align: left; /* Alinear el texto a la izquierda */
 }
 
 .services ul li {
-  margin-bottom: 10px;
-  color: #666666;
-  font-size: 16px;
-  line-height: 1.5;
+  margin-bottom: 10px; /* Margen inferior de 10px */
+  color: #666666; /* Color del texto */
+  font-size: 16px; /* Tamaño de fuente de 16px */
+  line-height: 1.5; /* Altura de línea de 1.5 para un espaciado adecuado entre líneas */
 }
 
 .services ul li a {
-  color: #007bff;
-  text-decoration: none;
+  color: #007bff; /* Color del enlace */
+  text-decoration: none; /* Eliminar subrayado del enlace */
 }
 
 @media (max-width: 768px) {
   .services {
-    padding: 20px;
+    padding: 20px; /* Espaciado interno de 20px en dispositivos con un ancho máximo de 768px */
   }
 
   .services h3 {
-    font-size: 24px;
+    font-size: 24px; /* Tamaño de fuente de 24px en dispositivos con un ancho máximo de 768px */
   }
 
   .services p {
-    font-size: 16px;
+    font-size: 16px; /* Tamaño de fuente de 16px en dispositivos con un ancho máximo de 768px */
   }
 
   .services ul li {
-    font-size: 14px;
+    font-size: 14px; /* Tamaño de fuente de 14px en dispositivos con un ancho máximo de 768px */
   }
 }

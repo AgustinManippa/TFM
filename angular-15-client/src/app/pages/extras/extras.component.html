@@ -7,12 +7,13 @@
 </div>
 
 <div *ngIf="errorMessage" class="error-message">
+  <!-- Muestra el mensaje de error si existe uno -->
   {{ errorMessage }}
 </div>
 
 <div *ngIf="comics">
-    <h3 class="section-title">Comics</h3>
-    <table class="info-table">
+  <h3 class="section-title">Comics</h3>
+  <table class="info-table">
     <thead>
       <tr>
         <th>Título</th>
@@ -20,6 +21,7 @@
       </tr>
     </thead>
     <tbody>
+      <!-- Itera sobre los cómics y muestra cada uno en una fila de la tabla -->
       <tr *ngFor="let comic of comics">
         <td>{{ comic.title }}</td>
         <td>{{ comic.description }}</td>
@@ -29,8 +31,8 @@
 </div>
 
 <div *ngIf="events">
-    <h3 class="section-title">Eventos</h3>
-    <table class="info-table">
+  <h3 class="section-title">Eventos</h3>
+  <table class="info-table">
     <thead>
       <tr>
         <th>Título</th>
@@ -38,6 +40,7 @@
       </tr>
     </thead>
     <tbody>
+      <!-- Itera sobre los eventos y muestra cada uno en una fila de la tabla -->
       <tr *ngFor="let event of events">
         <td>{{ event.title }}</td>
         <td>{{ event.description }}</td>
@@ -56,6 +59,7 @@
       </tr>
     </thead>
     <tbody>
+      <!-- Itera sobre las series y muestra cada una en una fila de la tabla -->
       <tr *ngFor="let serie of series">
         <td>{{ serie.title }}</td>
         <td>{{ serie.description }}</td>
@@ -74,6 +78,7 @@
       </tr>
     </thead>
     <tbody>
+      <!-- Itera sobre las historias y muestra cada una en una fila de la tabla -->
       <tr *ngFor="let story of stories">
         <td>{{ story.title }}</td>
         <td>{{ story.description }}</td>

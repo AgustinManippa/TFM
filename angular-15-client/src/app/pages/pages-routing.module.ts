@@ -11,15 +11,14 @@ import { ExtrasComponent } from './extras/extras.component';
 const routes: Routes = [
   {
     path: '',
-    component: PagesComponent,
+    component: PagesComponent, // Componente principal de páginas
     children: [
-      { path: 'personajes', component: PersonajesComponent },
-      { path: 'series', component: SeriesComponent },
-      { path: 'comics', component: ComicsComponent },
-      { path: 'enciclopedia', component: EnciclopediaComponent },
-      { path: 'extras', component: ExtrasComponent },
-
-    //   { path: '', redirectTo: 'home', pathMatch: 'full' }
+      { path: 'personajes', component: PersonajesComponent }, // Ruta para la página de personajes
+      { path: 'series', component: SeriesComponent }, // Ruta para la página de series
+      { path: 'comics', component: ComicsComponent }, // Ruta para la página de cómics
+      { path: 'enciclopedia', component: EnciclopediaComponent }, // Ruta para la página de enciclopedia
+      { path: 'extras', component: ExtrasComponent }, // Ruta para la página de extras
+      { path: '', redirectTo: '', pathMatch: 'full' } // Ruta de redirección opcional
     ]
   }
 ];

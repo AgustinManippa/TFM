@@ -7,17 +7,18 @@ describe('BoardUserComponent', () => {
   let fixture: ComponentFixture<BoardUserComponent>;
 
   beforeEach(async () => {
+    // Configuración del entorno de pruebas para el componente BoardUserComponent
     await TestBed.configureTestingModule({
-      declarations: [ BoardUserComponent ]
+      declarations: [ BoardUserComponent ] // Declaración del componente a probar
     })
-    .compileComponents();
+    .compileComponents(); // Compilación del componente y sus plantillas
 
-    fixture = TestBed.createComponent(BoardUserComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    fixture = TestBed.createComponent(BoardUserComponent); // Creación del componente dentro del fixture
+    component = fixture.componentInstance; // Obtener una instancia del componente a probar
+    fixture.detectChanges(); // Detectar los cambios iniciales en el componente
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(component).toBeTruthy(); // Comprobar que el componente se ha creado correctamente
   });
 });

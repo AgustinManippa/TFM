@@ -9,15 +9,17 @@ import Swal from 'sweetalert2';
   styleUrls: ['./enciclopedia.component.css']
 })
 export class EnciclopediaComponent {
-  characterId: number = 0;
-  character: CharacterResult | null = null;
-  errorMessage: string | null = null;
+  characterId: number = 0; // ID del personaje a buscar
+  character: CharacterResult | null = null; // Almacena los datos del personaje encontrado
+  errorMessage: string | null = null; // Mensaje de error en caso de falla
 
   constructor(private marvelService: MarvelService) {}
 
   buscarPersonaje() {
-    this.character = null;
-    this.errorMessage = null;
+    this.character = null; // Reinicia los datos del personaje
+    this.errorMessage = null; // Reinicia el mensaje de error
+
+    // Muestra un diálogo de carga utilizando SweetAlert2
     Swal.fire({
       title: 'Cargando',
       html: 'Espere un momento...',
@@ -27,33 +29,32 @@ export class EnciclopediaComponent {
         Swal.showLoading();
       },
     });
-  
+
     if (!this.characterId || isNaN(this.characterId) || this.characterId <= 0) {
+      // Valida si la ID del personaje es válida
       this.errorMessage = 'La ID debe ser un número entero mayor a 0.';
       Swal.close(); // Cierra el diálogo de SweetAlert en caso de error
       return;
     }
-  
+
     this.marvelService.getPersonajeById(this.characterId).subscribe(
       (response: GetCharacterResult) => {
         if (response) {
-          this.character = response.results[0];
+          this.character = response.results[0]; // Almacena los datos del primer personaje encontrado
           Swal.close(); // Cierra el diálogo de SweetAlert
         } else {
           this.errorMessage = 'No se encontró ningún personaje con esa ID.';
           Swal.close(); // Cierra el diálogo de SweetAlert en caso de error
-
         }
       },
       (error) => {
         this.errorMessage = 'Error al obtener el personaje.';
         Swal.close(); // Cierra el diálogo de SweetAlert en caso de error
-
       }
     );
   }
 
   getCharacterImageUrl(thumbnail: Image): string {
-    return `${thumbnail.path}.${thumbnail.extension}`;
+    return `${thumbnail.path}.${thumbnail.extension}`; // Genera la URL de la imagen del personaje
   }
 }

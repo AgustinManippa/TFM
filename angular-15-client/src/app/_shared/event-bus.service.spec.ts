@@ -6,11 +6,11 @@ describe('EventBusService', () => {
   let service: EventBusService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(EventBusService);
+    TestBed.configureTestingModule({}); // Configuración del módulo de pruebas
+    service = TestBed.inject(EventBusService); // Obtener una instancia del servicio a probar
   });
 
   it('should be created', () => {
-    expect(service).toBeTruthy();
+    expect(service).toBeTruthy(); // Comprobar que el servicio se ha creado correctamente
   });
 });

@@ -12,16 +12,17 @@ export class MessageFormComponent {
   messageForm: FormGroup;
 
   constructor(private formBuilder: FormBuilder, private conversationService: ConversationService) {
+    // Crear el formulario con el constructor FormBuilder y definir validadores para los campos
     this.messageForm = this.formBuilder.group({
-      recipient: ['', Validators.required],
-      content: ['', Validators.required]
+      recipient: ['', Validators.required], // Campo del destinatario con validación requerida
+      content: ['', Validators.required] // Campo del contenido del mensaje con validación requerida
     });
   }
 
   sendMessage() {
     if (this.messageForm.valid) {
-      const recipient = this.messageForm.get('recipient')?.value;
-      const content = this.messageForm.get('content')?.value;
+      const recipient = this.messageForm.get('recipient')?.value; // Obtener el valor del campo destinatario
+      const content = this.messageForm.get('content')?.value; // Obtener el valor del campo contenido del mensaje
   
       // Verificar si el destinatario es el mismo usuario
       if (recipient === this.conversationService.username) {
@@ -33,11 +34,12 @@ export class MessageFormComponent {
         return;
       }
   
+      // Llamar al servicio de conversación para enviar el mensaje
       this.conversationService.sendMessage(content, recipient);
   
-      // Suscribirse a la respuesta del método sendMessage
+      // Suscribirse a la respuesta del método sendMessage del servicio de conversación
       this.conversationService.sendMessageResponse$.subscribe((response: any) => {
-        //no entra nunca aca
+        // Verificar si hay un error en la respuesta
         if (response.error === 'El destinatario no existe') {
           Swal.fire({
             icon: 'error',
@@ -50,11 +52,11 @@ export class MessageFormComponent {
             title: 'Mensaje enviado con éxito',
             confirmButtonText: 'Ok',
           });
-          this.messageForm.reset();
+          this.messageForm.reset(); // Restablecer el formulario después de enviar el mensaje exitosamente
         }
       });
   
-      this.messageForm.reset();
+      this.messageForm.reset(); // Restablecer el formulario después de enviar el mensaje
     }
   }
 

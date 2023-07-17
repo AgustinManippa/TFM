@@ -1,12 +1,11 @@
 .message-container {
   display: flex;
-  flex-wrap: wrap; /* Agregar esta línea */
+  flex-wrap: wrap; /* El contenedor se envuelve en varias líneas si es necesario */
   justify-content: center;
   align-items: flex-start;
-  min-height: calc(100vh - 60px); /* Restar la altura del footer */
-  padding-bottom: 60px; /* Agregar un espacio para el footer */
+  min-height: calc(100vh - 60px); /* Se calcula la altura mínima restando la altura del footer */
+  padding-bottom: 60px; /* Se agrega espacio para el footer */
 }
-
 
 .conversation-list {
   flex: 1;
@@ -29,14 +28,14 @@
 
 @media (max-width: 768px) {
   .message-container {
-    flex-direction: column;
-    align-items: center;
+    flex-direction: column; /* Los elementos se apilan verticalmente en dispositivos con un ancho máximo de 768px */
+    align-items: center; /* Se centran horizontalmente en dispositivos con un ancho máximo de 768px */
   }
-  
+
   .conversation-list,
   .message-form {
     max-width: 100%;
     margin-right: 0;
-    margin-bottom: 10px;
+    margin-bottom: 10px; /* Se agrega margen inferior para separar los componentes en dispositivos móviles */
   }
 }

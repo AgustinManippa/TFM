@@ -1,43 +1,44 @@
 <form [formGroup]="formGroup" (ngSubmit)="loadComics()" class="comics-form">
-    <div>
-      <label for="offset">Límite:</label>
-      <select id="offset" formControlName="offset" required>
-        <option *ngFor="let page of getPageNumbers()" [value]="(page) * comicsPerPage">
-          {{ getDisplayedRange(page) }}
-        </option>
-      </select>
-      <div *ngIf="formGroup?.get('offset')?.invalid && formGroup?.get('offset')?.touched" class="error-message">
-        El límite es requerido y debe ser un número mayor o igual a cero.
-      </div>
+  <div>
+    <label for="offset">Límite:</label> <!-- Etiqueta para el campo de selección de límite -->
+    <select id="offset" formControlName="offset" required> <!-- Campo de selección de límite -->
+      <option *ngFor="let page of getPageNumbers()" [value]="(page) * comicsPerPage">
+        {{ getDisplayedRange(page) }} <!-- Rango de visualización del límite -->
+      </option>
+    </select>
+    <div *ngIf="formGroup?.get('offset')?.invalid && formGroup?.get('offset')?.touched" class="error-message">
+      El límite es requerido y debe ser un número mayor o igual a cero. <!-- Mensaje de error para el campo de límite -->
     </div>
-  
-    <button type="submit" class="load" [disabled]="formGroup.invalid" (click)="loadComics()">Cargar Comics</button>
-  </form>
-  
-  <div *ngIf="comics.length > 0">
-    <h2 class="comics-heading">Lista de comics:</h2>
-    <table class="comics-table">
-      <thead>
-        <tr>
-          <th>Título</th>
-          <th>Descripción</th>
-          <th>ISBN</th>
-          <th>Formato</th>
-          <th>Número de páginas</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let comic of comics">
-          <td>{{ comic.title }}</td>
-          <td>{{ comic.description }}</td>
-          <td>{{ comic.isbn }}</td>
-          <td>{{ comic.format }}</td>
-          <td>{{ comic.pageCount }}</td>
-        </tr>
-      </tbody>
-    </table>
   </div>
-  
-  <div *ngIf="comics.length === 0" class="no-comics">
-    <p>No se encontraron comics.</p>
-  </div>
+
+  <button type="submit" class="load" [disabled]="formGroup.invalid" (click)="loadComics()">Cargar Comics</button> <!-- Botón para cargar los cómics -->
+
+</form>
+
+<div *ngIf="comics.length > 0">
+  <h2 class="comics-heading">Lista de comics:</h2> <!-- Título de la lista de cómics -->
+  <table class="comics-table">
+    <thead>
+      <tr>
+        <th>Título</th>
+        <th>Descripción</th>
+        <th>ISBN</th>
+        <th>Formato</th>
+        <th>Número de páginas</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let comic of comics">
+        <td>{{ comic.title }}</td> <!-- Título del cómic -->
+        <td>{{ comic.description }}</td> <!-- Descripción del cómic -->
+        <td>{{ comic.isbn }}</td> <!-- ISBN del cómic -->
+        <td>{{ comic.format }}</td> <!-- Formato del cómic -->
+        <td>{{ comic.pageCount }}</td> <!-- Número de páginas del cómic -->
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div *ngIf="comics.length === 0" class="no-comics">
+  <p>No se encontraron comics.</p> <!-- Mensaje que se muestra si no se encuentran cómics -->
+</div>

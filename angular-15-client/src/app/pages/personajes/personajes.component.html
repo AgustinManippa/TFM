@@ -1,37 +1,37 @@
 <form [formGroup]="formGroup" (ngSubmit)="cargarPersonajes()" class="personajes-form">
   <div>
-    <label for="offset">Rango:</label>
-    <select id="offset" formControlName="offset" required>
+    <label for="offset">Rango:</label> <!-- Etiqueta "Rango" para el campo de selección -->
+    <select id="offset" formControlName="offset" required> <!-- Campo de selección para el rango de personajes -->
       <option *ngFor="let page of getPageNumbers()" [value]="(page) * charactersPerPage">
-        {{ getDisplayedRange(page) }}
+        {{ getDisplayedRange(page) }} <!-- Opciones del campo de selección con el rango de personajes -->
       </option>
     </select>
     <div *ngIf="formGroup?.get('offset')?.invalid && formGroup?.get('offset')?.touched" class="error-message">
-      El límite es requerido y debe ser un número mayor o igual a cero.
+      El límite es requerido y debe ser un número mayor o igual a cero. <!-- Mensaje de error para el campo de selección -->
     </div>
   </div>
 
-  <button type="submit" class="cargar" [disabled]="formGroup.invalid" (click)="cargarPersonajes()">Cargar Personajes</button>
+  <button type="submit" class="cargar" [disabled]="formGroup.invalid" (click)="cargarPersonajes()">Cargar Personajes</button> <!-- Botón para cargar los personajes -->
 </form>
 
 <div *ngIf="characters.length > 0">
-  <h2 class="personajes-heading">Lista de personajes:</h2>
+  <h2 class="personajes-heading">Lista de personajes:</h2> <!-- Título "Lista de personajes" -->
   <table class="personajes-table">
     <thead>
       <tr>
-        <th>Nombre</th>
-        <th>ID</th>
+        <th>Nombre</th> <!-- Encabezado de columna "Nombre" -->
+        <th>ID</th> <!-- Encabezado de columna "ID" -->
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let character of characters">
-        <td>{{ character.name }}</td>
-        <td>{{ character.id }}</td>
+        <td>{{ character.name }}</td> <!-- Datos del nombre del personaje -->
+        <td>{{ character.id }}</td> <!-- Datos del ID del personaje -->
       </tr>
     </tbody>
   </table>
 </div>
 
 <div *ngIf="characters.length === 0" class="no-characters">
-  <p>No se encontraron personajes.</p>
+  <p>No se encontraron personajes.</p> <!-- Mensaje de "No se encontraron personajes" -->
 </div>

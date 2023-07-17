@@ -6,11 +6,11 @@ describe('AuthService', () => {
   let service: AuthService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(AuthService);
+    TestBed.configureTestingModule({}); // Configuración del módulo de pruebas
+    service = TestBed.inject(AuthService); // Obtener una instancia del servicio a probar
   });
 
   it('should be created', () => {
-    expect(service).toBeTruthy();
+    expect(service).toBeTruthy(); // Comprobar que el servicio se ha creado correctamente
   });
 });

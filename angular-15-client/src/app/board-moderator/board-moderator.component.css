@@ -1,56 +1,58 @@
+/* Estilos de la tabla de usuarios */
+
 .table-container {
-  overflow-x: auto;
+  overflow-x: auto; /* Habilita la barra de desplazamiento horizontal si el contenido de la tabla es demasiado ancho */
 }
 
 .user-table {
-  width: 100%;
-  border-collapse: collapse;
+  width: 100%; /* Establece el ancho de la tabla al 100% del contenedor */
+  border-collapse: collapse; /* Combina los bordes de las celdas adyacentes */
 }
 
 .user-table th,
 .user-table td {
-  padding: 8px;
-  border: 1px solid #ccc;
+  padding: 8px; /* Espaciado interno de las celdas */
+  border: 1px solid #ccc; /* Borde de 1 píxel sólido con color #ccc */
 }
 
 .user-table th {
-  background-color: #f2f2f2;
-  font-weight: bold;
-  text-align: left;
+  background-color: #f2f2f2; /* Color de fondo para las celdas de encabezado */
+  font-weight: bold; /* Texto en negrita para las celdas de encabezado */
+  text-align: left; /* Alineación del texto a la izquierda para las celdas de encabezado */
 }
 
 .user-table tbody tr:nth-child(even) {
-  background-color: #f9f9f9;
+  background-color: #f9f9f9; /* Color de fondo para las filas pares del cuerpo de la tabla */
 }
 
 /* Media queries */
 @media only screen and (max-width: 768px) {
   .table-container {
-    overflow-x: initial;
+    overflow-x: initial; /* Restaura el desplazamiento horizontal a su valor inicial */
   }
 
   .user-table {
-    width: auto;
+    width: auto; /* Restaura el ancho de la tabla a su valor automático */
   }
 
   .user-table th,
   .user-table td {
-    display: block;
-    width: 100%;
-    text-align: center;
+    display: block; /* Cambia el comportamiento de las celdas a un elemento de bloque para que se apilen verticalmente */
+    width: 100%; /* Establece el ancho de las celdas al 100% del contenedor */
+    text-align: center; /* Alineación del texto al centro para las celdas */
   }
 
   .user-table th {
-    font-size: 14px;
+    font-size: 14px; /* Tamaño de fuente para las celdas de encabezado en la vista de pantalla pequeña */
   }
 
   .user-table td {
-    font-size: 12px;
-    border: none;
-    border-bottom: 1px solid #ccc;
+    font-size: 12px; /* Tamaño de fuente para las celdas del cuerpo de la tabla en la vista de pantalla pequeña */
+    border: none; /* Elimina los bordes de las celdas */
+    border-bottom: 1px solid #ccc; /* Agrega un borde inferior de 1 píxel sólido con color #ccc a las celdas */
   }
 
   .user-table tbody tr:last-child td {
-    border-bottom: none;
+    border-bottom: none; /* Elimina el borde inferior de la última fila del cuerpo de la tabla */
   }
 }

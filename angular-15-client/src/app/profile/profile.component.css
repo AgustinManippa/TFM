@@ -1,32 +1,42 @@
+/* Contenedor principal con un ancho máximo de 500px y centrado horizontalmente en la página */
 .container {
-    max-width: 500px;
-    margin: 0 auto;
-    margin-top: 20px;
-  }
-  
-  .jumbotron {
-    background-color: #007bff;
-    color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    margin-bottom: 20px;
-  }
-  
-  .profile-info {
-    background-color: #f5f5f5;
-    padding: 20px;
-    border-radius: 5px;
-  }
-  
-  ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  li {
-    margin-bottom: 5px;
-  }
-  
-  .logged-out {
-    color: #f00;
-  }
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+/* Estilos para el jumbotron, un elemento de presentación con fondo azul y texto blanco */
+.jumbotron {
+  background-color: #007bff;
+  color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+
+/* Estilos para la sección de información del perfil, con un fondo gris claro y bordes redondeados */
+.profile-info {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+
+/* Estilos para las listas sin viñetas, eliminando el espaciado y el marcador de lista */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+
+/* Estilos para los elementos de lista, con un margen inferior de 5px */
+li {
+  margin-bottom: 5px;
+}
+
+
+/* Estilos para el texto "logged-out" con color rojo (#f00) */
+.logged-out {
+  color: #f00;
+}

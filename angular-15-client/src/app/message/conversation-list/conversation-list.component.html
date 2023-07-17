@@ -1,5 +1,8 @@
 <div class="conversation-list">
+  <!-- Encabezado de la lista de conversaciones -->
   <h2>Conversaciones</h2>
+
+  <!-- Barra de búsqueda -->
   <div class="search-bar">
     <form (ngSubmit)="filterConversations()">
       <input type="text" [(ngModel)]="senderFilter" name="senderFilter" placeholder="Buscar por remitente">
@@ -7,13 +10,17 @@
       <button class="reset" type="button" (click)="resetFilter()">Restablecer</button>
     </form>
   </div>
+
+  <!-- Lista de conversaciones -->
   <ul>
     <li *ngFor="let conversation of filteredConversations">
       <div class="conversation-item">
+        <!-- Encabezado de la conversación -->
         <div class="conversation-header">
           <h3>{{ conversation.senderUsername }}</h3>
           <span class="timestamp">{{ conversation.timestamp | date: 'medium' }}</span>
         </div>
+        <!-- Contenido de la conversación -->
         <p class="content">{{ conversation.content }}</p>
       </div>
     </li>

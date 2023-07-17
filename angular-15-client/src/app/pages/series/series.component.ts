@@ -4,8 +4,9 @@ import { MarvelService } from 'src/app/_services/marvel.service';
 import { GetSeriesResult, SeriesResult, Image } from 'src/app/interfaces/marvel.model';
 import Swal from 'sweetalert2';
 
+// Interfaz extendida de SeriesResult para agregar la propiedad showImage
 interface SeriesResultWithImage extends SeriesResult {
-  showImage: boolean;
+  showImage: boolean; // Indica si se debe mostrar la imagen de la serie
 }
 
 @Component({
@@ -14,21 +15,22 @@ interface SeriesResultWithImage extends SeriesResult {
   styleUrls: ['./series.component.css'],
 })
 export class SeriesComponent {
-  series: SeriesResultWithImage[] = [];
-  formGroup: FormGroup;
-  seriesPerPage = 50;
-  maxSeries = 0;
+  series: SeriesResultWithImage[] = []; // Lista de series con la propiedad showImage
+  formGroup: FormGroup; // Grupo de formulario para el offset
+  seriesPerPage = 50; // Cantidad de series por página
+  maxSeries = 0; // Total de series disponibles
 
   constructor(
     private readonly marvelService: MarvelService,
     private readonly formBuilder: FormBuilder
   ) {
     this.formGroup = this.formBuilder.group({
-      offset: [0, [Validators.required, Validators.min(0)]],
+      offset: [0, [Validators.required, Validators.min(0)]], // Control del offset con validadores
     });
   }
 
   ngOnInit(): void {
+    // Obtener el total de series disponibles
     this.marvelService.getSeries(1, 0).subscribe(
       (response: GetSeriesResult) => {
         this.maxSeries = response.total;
@@ -38,7 +40,7 @@ export class SeriesComponent {
         // Manejar el error aquí
       }
     );
-    this.cargarSeries();
+    this.cargarSeries(); // Cargar las series iniciales
   }
 
   cargarSeries() {
@@ -61,9 +63,10 @@ export class SeriesComponent {
 
       this.marvelService.getSeries(limit, offset).subscribe(
         (response: GetSeriesResult) => {
+          // Mapear las series y agregar la propiedad showImage
           this.series = response?.results?.map((serie: SeriesResult) => ({
             ...serie,
-            showImage: false
+            showImage: false // Valor predeterminado para no mostrar la imagen
           })) || [];
           Swal.close(); // Cierra el diálogo de SweetAlert
         },
@@ -71,7 +74,6 @@ export class SeriesComponent {
           console.error(error);
           // Manejar el error aquí
           Swal.close(); // Cierra el diálogo de SweetAlert en caso de error
-
         }
       );
     } else {
@@ -91,10 +93,10 @@ export class SeriesComponent {
   }
 
   mostrarImagen(serie: SeriesResultWithImage) {
-    serie.showImage = true;
+    serie.showImage = true; // Mostrar la imagen de la serie
   }
 
   getSeriesImageUrl(thumbnail: Image): string {
-    return `${thumbnail.path}.${thumbnail.extension}`;
+    return `${thumbnail.path}.${thumbnail.extension}`; // Obtener la URL de la imagen de la serie
   }
 }

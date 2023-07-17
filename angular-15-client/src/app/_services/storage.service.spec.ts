@@ -6,11 +6,11 @@ describe('StorageService', () => {
   let service: StorageService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(StorageService);
+    TestBed.configureTestingModule({}); // Configuración del módulo de pruebas
+    service = TestBed.inject(StorageService); // Obtener una instancia del servicio a probar
   });
 
   it('should be created', () => {
-    expect(service).toBeTruthy();
+    expect(service).toBeTruthy(); // Comprobar que el servicio se ha creado correctamente
   });
 });

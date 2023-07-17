@@ -5,7 +5,6 @@ import { AuthService } from 'src/app/_services/auth.service';
 import { StorageService } from 'src/app/_services/storage.service';
 import { EventBusService } from 'src/app/_shared/event-bus.service';
 
-
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
@@ -13,10 +12,10 @@ import { EventBusService } from 'src/app/_shared/event-bus.service';
 })
 export class NavComponent {
   private roles: string[] = [];
-  isLoggedIn = false;
-  showAdminBoard = false;
-  showModeratorBoard = false;
-  username?: string;
+  isLoggedIn = false; // Variable para rastrear si el usuario ha iniciado sesión
+  showAdminBoard = false; // Variable para mostrar o ocultar el panel de administrador
+  showModeratorBoard = false; // Variable para mostrar o ocultar el panel de moderador
+  username?: string; // Variable para almacenar el nombre de usuario
 
   eventBusSub?: Subscription;
 
@@ -24,20 +23,20 @@ export class NavComponent {
     private storageService: StorageService,
     private authService: AuthService,
     private eventBusService: EventBusService,
-    private router: Router // Inyectamos el servicio Router
+    private router: Router // Inyectamos el servicio Router para redireccionar
   ) {}
 
   ngOnInit(): void {
-    this.isLoggedIn = this.storageService.isLoggedIn();
+    this.isLoggedIn = this.storageService.isLoggedIn(); // Comprobamos si el usuario ha iniciado sesión
 
     if (this.isLoggedIn) {
       const user = this.storageService.getUser();
       this.roles = user.roles;
 
-      this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
-      this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR');
+      this.showAdminBoard = this.roles.includes('ROLE_ADMIN'); // Comprobamos si el usuario tiene el rol de administrador
+      this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR'); // Comprobamos si el usuario tiene el rol de moderador
 
-      this.username = user.username;
+      this.username = user.username; // Obtenemos el nombre de usuario
     }
 
     this.eventBusSub = this.eventBusService.on('logout', () => {
@@ -49,9 +48,9 @@ export class NavComponent {
     this.authService.logout().subscribe({
       next: res => {
         console.log(res);
-        this.storageService.clean();
+        this.storageService.clean(); // Eliminamos los datos de autenticación almacenados
 
-        this.router.navigate(['/home']); // Redirige a la página de inicio
+        this.router.navigate(['/home']); // Redirigimos al usuario a la página de inicio
       },
       error: err => {
         console.log(err);

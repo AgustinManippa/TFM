@@ -1,46 +1,48 @@
+/* Estilos para el formulario de mensajes */
+
 .message-form {
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.8); /* Color de fondo con transparencia */
+  padding: 20px; /* Espaciado interno */
+  border-radius: 5px; /* Borde redondeado */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
 }
 
 .message-form h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
+  font-size: 24px; /* Tamaño de fuente */
+  margin-bottom: 10px; /* Espaciado inferior */
 }
 
 .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 15px; /* Espaciado inferior */
 }
 
 label {
-  display: block;
-  font-size: 16px;
-  font-weight: bold;
-  margin-bottom: 5px;
+  display: block; /* Muestra el texto de etiqueta en una línea separada */
+  font-size: 16px; /* Tamaño de fuente */
+  font-weight: bold; /* Fuente en negrita */
+  margin-bottom: 5px; /* Espaciado inferior */
 }
 
 input[type="text"],
 textarea {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+  width: 100%; /* Ancho al 100% del contenedor */
+  padding: 10px; /* Espaciado interno */
+  font-size: 16px; /* Tamaño de fuente */
+  border-radius: 5px; /* Borde redondeado */
+  border: 1px solid #ccc; /* Borde con color y grosor */
 }
 
 button {
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #4caf50;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  padding: 10px 20px; /* Espaciado interno (vertical, horizontal) */
+  font-size: 16px; /* Tamaño de fuente */
+  background-color: #4caf50; /* Color de fondo */
+  color: #fff; /* Color de texto */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Borde redondeado */
+  cursor: pointer; /* Cambia el cursor al pasar por encima */
 }
 
 button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
+  background-color: #ccc; /* Color de fondo desactivado */
+  cursor: not-allowed; /* Cambia el cursor a "no permitido" */
 }

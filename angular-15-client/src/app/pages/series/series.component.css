@@ -3,95 +3,95 @@
 }
 
 .series-form label {
-  font-weight: bold;
+  font-weight: bold; /* Texto del label en negrita */
 }
 
 .series-form select {
-  margin-left: 10px;
+  margin-left: 10px; /* Margen izquierdo para el select */
 }
 
 .error-message {
-  color: red;
-  margin-top: 5px;
+  color: red; /* Color del mensaje de error */
+  margin-top: 5px; /* Margen superior para el mensaje de error */
 }
 
 .cargar {
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  padding: 10px 20px; /* Espaciado interno del botón */
+  background-color: #007bff; /* Color de fondo del botón */
+  color: #fff; /* Color del texto del botón */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Borde redondeado */
+  cursor: pointer; /* Cursor de puntero al pasar por encima del botón */
 }
 
 .cargar:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
+  background-color: #ccc; /* Color de fondo del botón desactivado */
+  cursor: not-allowed; /* Cursor no permitido al pasar por encima del botón desactivado */
 }
 
 .series-heading {
-  margin-top: 20px;
-  font-size: 24px;
+  margin-top: 20px; /* Margen superior para el título */
+  font-size: 24px; /* Tamaño de fuente del título */
 }
 
 .series-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 10px;
-  background-color: #fff;
+  width: 100%; /* Ancho completo de la tabla */
+  border-collapse: collapse; /* Colapso de los bordes de la tabla */
+  margin-top: 10px; /* Margen superior de la tabla */
+  background-color: #fff; /* Color de fondo de la tabla */
 }
 
 .series-table th,
 .series-table td {
-  padding: 10px;
-  text-align: left;
-  border-bottom: 1px solid #ccc;
-  border-color: #000;
+  padding: 10px; /* Espaciado interno de las celdas */
+  text-align: left; /* Alineación del texto a la izquierda */
+  border-bottom: 1px solid #ccc; /* Borde inferior de las celdas */
+  border-color: #000; /* Color del borde */
 }
 
 .series-table img {
-  max-width: 100px;
-  max-height: 100px;
+  max-width: 100px; /* Ancho máximo de la imagen */
+  max-height: 100px; /* Altura máxima de la imagen */
 }
 
 .no-series {
-  margin-top: 20px;
-  font-style: italic;
-  color: #777;
+  margin-top: 20px; /* Margen superior para el mensaje de no se encontraron series */
+  font-style: italic; /* Estilo de fuente en cursiva */
+  color: #777; /* Color del mensaje de no se encontraron series */
 }
 
 .no-series p {
-  margin: 0;
+  margin: 0; /* Eliminar el margen del párrafo dentro del mensaje de no se encontraron series */
 }
 
 @media (max-width: 576px) {
   .series-form label {
-    display: block;
-    margin-bottom: 5px;
+    display: block; /* Mostrar el label en una línea separada */
+    margin-bottom: 5px; /* Margen inferior para el label en pantallas pequeñas */
   }
 
   .series-form select {
-    margin-left: 0;
-    margin-bottom: 10px;
+    margin-left: 0; /* Eliminar el margen izquierdo para el select en pantallas pequeñas */
+    margin-bottom: 10px; /* Margen inferior para el select en pantallas pequeñas */
   }
 
   .cargar {
-    padding: 8px 16px;
+    padding: 8px 16px; /* Espaciado interno del botón en pantallas pequeñas */
   }
 
   .series-heading {
-    font-size: 20px;
-    margin-top: 15px;
+    font-size: 20px; /* Tamaño de fuente del título en pantallas pequeñas */
+    margin-top: 15px; /* Margen superior para el título en pantallas pequeñas */
   }
 
   .series-table th,
   .series-table td {
-    padding: 6px;
-    font-size: 14px;
+    padding: 6px; /* Espaciado interno de las celdas en pantallas pequeñas */
+    font-size: 14px; /* Tamaño de fuente de las celdas en pantallas pequeñas */
   }
 
   .series-table img {
-    max-width: 80px;
-    max-height: 80px;
+    max-width: 80px; /* Ancho máximo de la imagen en pantallas pequeñas */
+    max-height: 80px; /* Altura máxima de la imagen en pantallas pequeñas */
   }
 }

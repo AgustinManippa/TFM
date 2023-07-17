@@ -1,23 +1,36 @@
 <div class="container" *ngIf="currentUser; else loggedOut">
+  <!-- Contenedor principal que se muestra si currentUser existe; de lo contrario, se muestra el bloque "loggedOut" -->
   <header class="jumbotron">
+    <!-- Encabezado con estilo jumbotron -->
     <h3>
+      <!-- Título del encabezado -->
       <strong>{{ currentUser.username }}</strong> Profile
+      <!-- Nombre de usuario del perfil -->
     </h3>
   </header>
   <div class="profile-info">
+    <!-- Sección de información del perfil -->
     <p>
       <strong>Email:</strong>
+      <!-- Etiqueta para el correo electrónico -->
       {{ currentUser.email }}
+      <!-- Valor del correo electrónico del usuario actual -->
     </p>
     <strong>Roles:</strong>
+    <!-- Etiqueta para los roles -->
     <ul>
+      <!-- Lista de roles -->
       <li *ngFor="let role of currentUser.roles">
+        <!-- Elemento de lista para cada rol del usuario actual -->
         {{ role }}
+        <!-- Nombre del rol -->
       </li>
     </ul>
   </div>
 </div>
 
 <ng-template #loggedOut>
+  <!-- Bloque de contenido alternativo en caso de que currentUser no exista -->
   Please login.
+  <!-- Mensaje de inicio de sesión requerido -->
 </ng-template>

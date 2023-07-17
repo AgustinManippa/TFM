@@ -1,83 +1,85 @@
 body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-  background-size: cover;
-  padding: 0;
+  margin: 0; /* Elimina el margen predeterminado del cuerpo */
+  font-family: Roboto, "Helvetica Neue", sans-serif; /* Establece la fuente para el cuerpo del texto */
+  background-size: cover; /* Ajusta el tamaño del fondo para cubrir el contenedor */
+  padding: 0; /* Elimina el relleno predeterminado del cuerpo */
 }
 
 header {
-  text-align: center;
-  padding: 50px;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center; /* Centra el contenido del encabezado */
+  padding: 50px; /* Añade relleno al encabezado */
+  color: white; /* Establece el color del texto en blanco */
+  background-color: rgba(0, 0, 0, 0.5); /* Establece el color de fondo con transparencia */
 }
 
 h1 {
-  font-size: 40px;
-  margin-bottom: 10px;
+  font-size: 40px; /* Establece el tamaño de fuente del título principal */
+  margin-bottom: 10px; /* Agrega un margen inferior al título principal */
 }
 
 p {
-  font-size: 18px;
-  margin-bottom: 20px;
+  font-size: 18px; /* Establece el tamaño de fuente para los párrafos */
+  margin-bottom: 20px; /* Agrega un margen inferior a los párrafos */
 }
 
 main {
-  padding: 50px;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.7);
+  padding: 50px; /* Añade relleno al contenido principal */
+  color: white; /* Establece el color del texto en blanco */
+  background-color: rgba(0, 0, 0, 0.7); /* Establece el color de fondo con transparencia */
 }
 
 section {
-  margin-bottom: 40px;
+  margin-bottom: 40px; /* Agrega un margen inferior a las secciones */
 }
 
 h2 {
-  font-size: 28px;
-  margin-bottom: 10px;
+  font-size: 28px; /* Establece el tamaño de fuente para los títulos de sección */
+  margin-bottom: 10px; /* Agrega un margen inferior a los títulos de sección */
 }
 
 a {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: red;
-  color: white;
-  text-decoration: none;
-  font-size: 18px;
-  margin-top: 10px;
-  border-radius: 5px;
+  display: inline-block; /* Establece los enlaces como elementos en línea con bloqueo */
+  padding: 10px 20px; /* Añade relleno a los enlaces */
+  background-color: red; /* Establece el color de fondo de los enlaces */
+  color: white; /* Establece el color del texto en blanco */
+  text-decoration: none; /* Elimina la decoración de subrayado de los enlaces */
+  font-size: 18px; /* Establece el tamaño de fuente para los enlaces */
+  margin-top: 10px; /* Agrega un margen superior a los enlaces */
+  border-radius: 5px; /* Agrega bordes redondeados a los enlaces */
 }
 
 a:hover {
-  background-color: darkred;
+  background-color: darkred; /* Cambia el color de fondo de los enlaces al pasar el cursor sobre ellos */
 }
 
 @media (max-width: 576px) {
+  /* Estilos aplicados cuando el ancho de la pantalla es menor o igual a 576px */
+
   header {
-    padding: 30px;
+    padding: 30px; /* Ajusta el relleno del encabezado en dispositivos más pequeños */
   }
 
   h1 {
-    font-size: 32px;
+    font-size: 32px; /* Ajusta el tamaño de fuente del título principal en dispositivos más pequeños */
   }
 
   p {
-    font-size: 16px;
-    margin-bottom: 15px;
+    font-size: 16px; /* Ajusta el tamaño de fuente para los párrafos en dispositivos más pequeños */
+    margin-bottom: 15px; /* Ajusta el margen inferior de los párrafos en dispositivos más pequeños */
   }
 
   main {
-    padding: 30px;
+    padding: 30px; /* Ajusta el relleno del contenido principal en dispositivos más pequeños */
   }
 
   h2 {
-    font-size: 24px;
-    margin-bottom: 8px;
+    font-size: 24px; /* Ajusta el tamaño de fuente para los títulos de sección en dispositivos más pequeños */
+    margin-bottom: 8px; /* Ajusta el margen inferior de los títulos de sección en dispositivos más pequeños */
   }
 
   a {
-    padding: 8px 16px;
-    font-size: 16px;
-    margin-top: 8px;
+    padding: 8px 16px; /* Ajusta el relleno de los enlaces en dispositivos más pequeños */
+    font-size: 16px; /* Ajusta el tamaño de fuente para los enlaces en dispositivos más pequeños */
+    margin-top: 8px; /* Ajusta el margen superior de los enlaces en dispositivos más pequeños */
   }
 }

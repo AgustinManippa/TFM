@@ -1,66 +1,66 @@
 .container {
-  z-index: 9999;
+  z-index: 9999; /* Establece el índice z para asegurarse de que el contenedor esté en la parte superior */
 }
 
 form.delete-form {
-  margin-bottom: 20px;
-  margin-top: 20px;
+  margin-bottom: 20px; /* Margen inferior de 20px para el formulario de eliminación */
+  margin-top: 20px; /* Margen superior de 20px para el formulario de eliminación */
 }
 
 form label {
-  display: block;
-  margin-bottom: 10px;
-  font-weight: bold;
+  display: block; /* Muestra las etiquetas en un bloque separado */
+  margin-bottom: 10px; /* Margen inferior de 10px para las etiquetas */
+  font-weight: bold; /* Establece el peso de la fuente en negrita para las etiquetas */
 }
 
 form input[type="text"] {
-  width: 200px;
-  padding: 5px;
-  font-size: 14px;
+  width: 200px; /* Ancho del campo de entrada de texto de 200px */
+  padding: 5px; /* Espaciado interno de 5px para el campo de entrada de texto */
+  font-size: 14px; /* Tamaño de fuente de 14px para el campo de entrada de texto */
 }
 
 form button {
-  padding: 5px 10px;
-  font-size: 14px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  cursor: pointer;
+  padding: 5px 10px; /* Espaciado interno de 5px en la vertical y 10px en la horizontal para el botón */
+  font-size: 14px; /* Tamaño de fuente de 14px para el botón */
+  background-color: #007bff; /* Color de fondo #007bff para el botón */
+  color: #fff; /* Color de texto blanco para el botón */
+  border: none; /* Sin borde para el botón */
+  cursor: pointer; /* Cambia el cursor al puntero al pasar por encima del botón */
 }
 
 .table-container {
-  overflow-x: auto;
+  overflow-x: auto; /* Permite el desplazamiento horizontal si el contenido excede el ancho */
 }
 
 .user-table {
-  width: 100%;
-  border-collapse: collapse;
+  width: 100%; /* Ancho del 100% para la tabla de usuarios */
+  border-collapse: collapse; /* Colapsa los bordes de la tabla */
 }
 
 .user-table th,
 .user-table td {
-  padding: 8px;
-  border: 1px solid #ccc;
+  padding: 8px; /* Espaciado interno de 8px para las celdas de la tabla */
+  border: 1px solid #ccc; /* Borde de 1px sólido con color #ccc para las celdas de la tabla */
 }
 
 .user-table th {
-  background-color: #f2f2f2;
-  font-weight: bold;
-  text-align: left;
+  background-color: #f2f2f2; /* Fondo de los encabezados de columna con color #f2f2f2 */
+  font-weight: bold; /* Establece el peso de la fuente en negrita para los encabezados de columna */
+  text-align: left; /* Alineación del texto a la izquierda para los encabezados de columna */
 }
 
 .user-table tbody tr:nth-child(even) {
-  background-color: #f9f9f9;
+  background-color: #f9f9f9; /* Fondo de las filas pares con color #f9f9f9 */
 }
 
 /* Media queries */
 @media only screen and (max-width: 768px) {
   form input[type="text"] {
-    width: 100%;
+    width: 100%; /* Ajusta el ancho del campo de entrada de texto al 100% en dispositivos con una resolución máxima de 768px */
   }
 
   form button {
-    margin-top: 10px;
-    width: 100%;
+    margin-top: 10px; /* Margen superior de 10px para el botón en dispositivos con una resolución máxima de 768px */
+    width: 100%; /* Ajusta el ancho del botón al 100% en dispositivos con una resolución máxima de 768px */
   }
 }

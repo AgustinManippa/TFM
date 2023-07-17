@@ -8,16 +8,16 @@ describe('HomeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HomeComponent ]
+      declarations: [ HomeComponent ] // Declara el componente HomeComponent para las pruebas
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(HomeComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    fixture = TestBed.createComponent(HomeComponent); // Crea una instancia del componente HomeComponent
+    component = fixture.componentInstance; // Obtiene la instancia del componente HomeComponent
+    fixture.detectChanges(); // Detecta los cambios en el componente
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(component).toBeTruthy(); // Verifica si el componente se ha creado exitosamente
   });
 });

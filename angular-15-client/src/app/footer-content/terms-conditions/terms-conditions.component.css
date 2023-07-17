@@ -1,46 +1,46 @@
 .terms-conditions {
-  padding: 40px;
-  background-color: #ffffff;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 40px; /* Espaciado interno de 40px */
+  background-color: #ffffff; /* Color de fondo */
+  border-radius: 5px; /* Borde redondeado con un radio de 5px */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
 }
 
 .terms-conditions-title {
-  margin-top: 0;
-  font-size: 28px;
-  font-weight: bold;
-  text-align: center;
+  margin-top: 0; /* Eliminar margen superior */
+  font-size: 28px; /* Tamaño de fuente de 28px */
+  font-weight: bold; /* Fuente en negrita */
+  text-align: center; /* Alinear al centro del contenedor */
 }
 
 .terms-condition {
-  margin-bottom: 20px;
+  margin-bottom: 20px; /* Margen inferior de 20px */
 }
 
 .terms-condition-title {
-  margin-top: 0;
-  font-size: 20px;
-  font-weight: bold;
+  margin-top: 0; /* Eliminar margen superior */
+  font-size: 20px; /* Tamaño de fuente de 20px */
+  font-weight: bold; /* Fuente en negrita */
 }
 
 .terms-condition-content {
-  margin-bottom: 0;
-  font-size: 16px;
+  margin-bottom: 0; /* Eliminar margen inferior */
+  font-size: 16px; /* Tamaño de fuente de 16px */
 }
 
 @media (max-width: 768px) {
   .terms-conditions {
-    padding: 20px;
+    padding: 20px; /* Espaciado interno de 20px en dispositivos con un ancho máximo de 768px */
   }
 
   .terms-conditions-title {
-    font-size: 24px;
+    font-size: 24px; /* Tamaño de fuente de 24px en dispositivos con un ancho máximo de 768px */
   }
 
   .terms-condition-title {
-    font-size: 18px;
+    font-size: 18px; /* Tamaño de fuente de 18px en dispositivos con un ancho máximo de 768px */
   }
 
   .terms-condition-content {
-    font-size: 14px;
+    font-size: 14px; /* Tamaño de fuente de 14px en dispositivos con un ancho máximo de 768px */
   }
 }

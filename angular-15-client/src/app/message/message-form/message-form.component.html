@@ -1,16 +1,16 @@
 <div class="message-form">
-  <h2>Enviar Mensaje</h2>
+  <h2>Enviar Mensaje</h2> <!-- Título del formulario -->
   <form (ngSubmit)="sendMessage()" [formGroup]="messageForm">
     <div class="form-group">
-      <label for="recipient">Destinatario:</label>
-      <input type="text" id="recipient" formControlName="recipient" required>
+      <label for="recipient">Destinatario:</label> <!-- Etiqueta para el campo de destinatario -->
+      <input type="text" id="recipient" formControlName="recipient" required> <!-- Campo de entrada de texto para el destinatario -->
     </div>
     <div class="form-group">
-      <label for="content">Mensaje:</label>
-      <textarea id="content" formControlName="content" required></textarea>
+      <label for="content">Mensaje:</label> <!-- Etiqueta para el campo de mensaje -->
+      <textarea id="content" formControlName="content" required></textarea> <!-- Área de texto para el mensaje -->
     </div>
     <div class="form-group">
-      <button type="submit" [disabled]="!messageForm.valid">Enviar</button>
+      <button type="submit" [disabled]="!messageForm.valid">Enviar</button> <!-- Botón de enviar con validación de formulario -->
     </div>
   </form>
 </div>

@@ -23,25 +23,27 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // Función que se ejecuta al enviar el formulario de registro
   onSubmit(): void {
     const { username, email, password } = this.form;
 
+    // Llamada al servicio de autenticación para registrar al usuario
     this.authService.register(username, email, password).subscribe({
       next: data => {
         console.log(data);
         this.isSuccessful = true;
         this.isSignUpFailed = false;
 
+        // Mostrar mensaje de registro exitoso utilizando la librería SweetAlert2
         Swal.fire({
           icon: 'success',
           title: 'Registro exitoso',
           confirmButtonText: 'Ok',
         }).then((result) => {
           if (result.isConfirmed) {
-            this.router.navigate(['/login']);
+            this.router.navigate(['/login']);  // Redirigir al usuario a la página de inicio de sesión
           }
         });
-       
       },
       error: err => {
         this.errorMessage = err.error.message;

@@ -1,50 +1,50 @@
 .privacy-policy {
-  padding: 20px;
-  background-color: #ffffff;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px; /* Espaciado interno de 20px */
+  background-color: #ffffff; /* Color de fondo */
+  border: 1px solid #ccc; /* Borde de 1px sólido con color #ccc */
+  border-radius: 5px; /* Borde redondeado con un radio de 5px */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
 }
 
 .privacy-policy-title {
-  margin-top: 0;
-  font-size: 28px;
-  font-weight: bold;
-  text-align: center;
-  color: #333333;
+  margin-top: 0; /* Margen superior de 0 */
+  font-size: 28px; /* Tamaño de fuente de 28px */
+  font-weight: bold; /* Fuente en negrita */
+  text-align: center; /* Alinear el texto al centro */
+  color: #333333; /* Color del texto */
 }
 
 .privacy-policy-section {
-  margin-bottom: 20px;
+  margin-bottom: 20px; /* Margen inferior de 20px */
 }
 
 .privacy-policy-section-title {
-  margin-top: 0;
-  font-size: 24px;
-  font-weight: bold;
-  color: #333333;
+  margin-top: 0; /* Margen superior de 0 */
+  font-size: 24px; /* Tamaño de fuente de 24px */
+  font-weight: bold; /* Fuente en negrita */
+  color: #333333; /* Color del texto */
 }
 
 .privacy-policy-section-content {
-  margin-bottom: 0;
-  color: #666666;
-  font-size: 16px;
+  margin-bottom: 0; /* Margen inferior de 0 */
+  color: #666666; /* Color del texto */
+  font-size: 16px; /* Tamaño de fuente de 16px */
 }
 
 @media (max-width: 768px) {
   .privacy-policy {
-    padding: 10px;
+    padding: 10px; /* Espaciado interno de 10px en dispositivos con un ancho máximo de 768px */
   }
 
   .privacy-policy-title {
-    font-size: 24px;
+    font-size: 24px; /* Tamaño de fuente de 24px en dispositivos con un ancho máximo de 768px */
   }
 
   .privacy-policy-section-title {
-    font-size: 20px;
+    font-size: 20px; /* Tamaño de fuente de 20px en dispositivos con un ancho máximo de 768px */
   }
 
   .privacy-policy-section-content {
-    font-size: 16px;
+    font-size: 16px; /* Tamaño de fuente de 16px en dispositivos con un ancho máximo de 768px */
   }
 }

@@ -20,11 +20,21 @@ export class ConversationService {
     this.username = storageService.getUser().username;
   }
 
+  /**
+   * Obtiene las conversaciones del usuario actual.
+   * @param senderName Nombre del remitente para filtrar las conversaciones (opcional).
+   * @returns Observable que emite un array de objetos Conversation.
+   */
   getConversations(senderName: string = ''): Observable<Conversation[]> {
     const url = `${this.backendUrl}/api/messages/${this.username}?senderName=${senderName}`;
     return this.http.get<Conversation[]>(url);
   }
 
+  /**
+   * Envía un mensaje a un destinatario especificado.
+   * @param content Contenido del mensaje.
+   * @param recipientUsername Nombre de usuario del destinatario.
+   */
   sendMessage(content: string, recipientUsername: string) {
     const url = `${this.backendUrl}/api/messages`;
 

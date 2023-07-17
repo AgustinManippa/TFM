@@ -1,32 +1,26 @@
 <div class="container">
-  <form (ngSubmit)="deleteUser()" class="delete-form">
-    <label for="username">Nombre de usuario:</label>
-    <input type="text" id="username" name="username" [(ngModel)]="username">
-    <button type="submit">Eliminar</button>
+  <form (ngSubmit)="deleteUser()" class="delete-form"> <!-- Formulario para eliminar un usuario -->
+    <label for="username">Nombre de usuario:</label> <!-- Etiqueta del campo de entrada de nombre de usuario -->
+    <input type="text" id="username" name="username" [(ngModel)]="username"> <!-- Campo de entrada de nombre de usuario vinculado a la propiedad "username" -->
+    <button type="submit">Eliminar</button> <!-- Botón de enviar para eliminar el usuario -->
   </form>
 
-  <div class="table-container">
-    <table class="user-table">
+  <div class="table-container"> <!-- Contenedor para la tabla de usuarios -->
+    <table class="user-table"> <!-- Tabla de usuarios -->
       <thead>
         <tr>
-          <th>Nombre de usuario</th>
-          <th>Email</th>
-          <th>Rol</th>
+          <th>Nombre de usuario</th> <!-- Encabezado de la columna "Nombre de usuario" -->
+          <th>Email</th> <!-- Encabezado de la columna "Email" -->
+          <th>Rol</th> <!-- Encabezado de la columna "Rol" -->
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let user of users">
-          <td>{{ user.username }}</td>
-          <td>{{ user.email }}</td>
-          <td>{{ user.roles }}</td>
+        <tr *ngFor="let user of users"> <!-- Iteración sobre cada usuario en la lista "users" -->
+          <td>{{ user.username }}</td> <!-- Celda con el nombre de usuario del usuario actual -->
+          <td>{{ user.email }}</td> <!-- Celda con el email del usuario actual -->
+          <td>{{ user.roles }}</td> <!-- Celda con los roles del usuario actual -->
         </tr>
       </tbody>
     </table>
   </div>
 </div>
-
-<!-- <div class="container"> 
-  <header class="jumbotron">
-    <p>{{ content }}</p>
-  </header>
-</div> -->

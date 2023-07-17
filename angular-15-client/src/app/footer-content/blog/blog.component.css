@@ -1,44 +1,44 @@
 .blog {
-  margin-top: 20px;
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 20px; /* Margen superior de 20px */
+  background-color: #fff; /* Color de fondo blanco */
+  padding: 20px; /* Espaciado interno de 20px */
+  border-radius: 5px; /* Borde redondeado con un radio de 5px */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
 }
 
 .blog-title {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 10px;
+  font-size: 24px; /* Tamaño de fuente de 24px */
+  font-weight: bold; /* Fuente en negrita */
+  margin-bottom: 10px; /* Margen inferior de 10px */
 }
 
 .blog-post {
-  margin-bottom: 20px;
+  margin-bottom: 20px; /* Margen inferior de 20px */
 }
 
 .blog-post-title {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 5px;
+  font-size: 20px; /* Tamaño de fuente de 20px */
+  font-weight: bold; /* Fuente en negrita */
+  margin-bottom: 5px; /* Margen inferior de 5px */
 }
 
 .blog-post-content {
-  font-size: 16px;
-  line-height: 1.5;
+  font-size: 16px; /* Tamaño de fuente de 16px */
+  line-height: 1.5; /* Altura de línea de 1.5 para un espaciado adecuado entre líneas */
 }
 
 @media screen and (max-width: 768px) {
   .blog-title {
-    font-size: 24px;
-    margin-bottom: 15px;
+    font-size: 24px; /* Tamaño de fuente de 24px en dispositivos con un ancho máximo de 768px */
+    margin-bottom: 15px; /* Margen inferior de 15px en dispositivos con un ancho máximo de 768px */
   }
 
   .blog-post-title {
-    font-size: 20px;
-    margin-bottom: 8px;
+    font-size: 20px; /* Tamaño de fuente de 20px en dispositivos con un ancho máximo de 768px */
+    margin-bottom: 8px; /* Margen inferior de 8px en dispositivos con un ancho máximo de 768px */
   }
 
   .blog-post-content {
-    font-size: 16px;
+    font-size: 16px; /* Tamaño de fuente de 16px en dispositivos con un ancho máximo de 768px */
   }
 }

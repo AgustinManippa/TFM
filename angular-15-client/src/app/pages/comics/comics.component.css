@@ -1,80 +1,80 @@
 .comics-form {
-  margin-bottom: 20px;
+  margin-bottom: 20px; /* Margen inferior para separar del contenido siguiente */
 }
 
 .comics-form label {
-  font-weight: bold;
+  font-weight: bold; /* Estilo en negrita para las etiquetas */
 }
 
 .comics-form select {
-  margin-left: 10px;
+  margin-left: 10px; /* Margen izquierdo para separar el select del elemento anterior */
 }
 
 .error-message {
-  color: red;
-  margin-top: 5px;
+  color: red; /* Color rojo para los mensajes de error */
+  margin-top: 5px; /* Margen superior para separar del elemento anterior */
 }
 
 .load {
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  padding: 10px 20px; /* Espaciado interno del botón */
+  background-color: #007bff; /* Color de fondo del botón */
+  color: #fff; /* Color de texto del botón */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Borde redondeado */
+  cursor: pointer; /* Cambio de cursor al pasar el mouse */
 }
 
 .load:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
+  background-color: #ccc; /* Color de fondo del botón deshabilitado */
+  cursor: not-allowed; /* Cursor de no permitido en el botón deshabilitado */
 }
 
 .comics-heading {
-  margin-top: 20px;
-  font-size: 24px;
+  margin-top: 20px; /* Margen superior para separar del elemento anterior */
+  font-size: 24px; /* Tamaño de fuente para el encabezado */
 }
 
 .comics-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 10px;
-  background-color: #fff;
+  width: 100%; /* Ancho completo de la tabla */
+  border-collapse: collapse; /* Colapso de bordes de la tabla */
+  margin-top: 10px; /* Margen superior para separar del elemento anterior */
+  background-color: #fff; /* Color de fondo de la tabla */
 }
 
 .comics-table th,
 .comics-table td {
-  padding: 10px;
-  text-align: left;
-  border-bottom: 1px solid #ccc;
-  border-color: #000;
+  padding: 10px; /* Espaciado interno de celdas */
+  text-align: left; /* Alineación del texto a la izquierda */
+  border-bottom: 1px solid #ccc; /* Borde inferior para las celdas */
+  border-color: #000; /* Color del borde */
 }
 
 .no-comics {
-  margin-top: 20px;
-  font-style: italic;
-  color: #777;
+  margin-top: 20px; /* Margen superior para separar del elemento anterior */
+  font-style: italic; /* Estilo de fuente en cursiva */
+  color: #777; /* Color de texto gris */
 }
 
 .no-comics p {
-  margin: 0;
+  margin: 0; /* Sin margen en los párrafos */
 }
 
 @media (max-width: 576px) {
   .comics-form {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Cambio de dirección de columna para el formulario en dispositivos móviles */
   }
 
   .comics-form select {
-    margin-left: 0;
-    margin-top: 10px;
+    margin-left: 0; /* Eliminar el margen izquierdo en dispositivos móviles */
+    margin-top: 10px; /* Margen superior para separar del elemento anterior */
   }
 
   .load {
-    margin-top: 10px;
+    margin-top: 10px; /* Margen superior para separar del elemento anterior */
   }
 
   .comics-heading {
-    margin-top: 30px;
+    margin-top: 30px; /* Margen superior mayor para separar del elemento anterior */
   }
 }

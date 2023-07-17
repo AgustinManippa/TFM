@@ -1,15 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Importación del archivo CSS de Bootstrap */
 @import "~bootstrap/dist/css/bootstrap.css";
 
+/* Estilos para el elemento html y body */
 html, body {
   height: 100%;
 }
 
+/* Estilos para el elemento body */
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+
+  /* Fondo de pantalla con imagen de Marvel */
   background-image: url('/assets/marvel.jpg');
-  background-size: cover;
+  background-size: cover; /* Ajusta la imagen al tamaño del contenedor */
   background-repeat: no-repeat; /* Evita la repetición de la imagen */
   background-attachment: fixed; /* Fija la imagen de fondo para que no se desplace con el contenido */
   padding: 0;

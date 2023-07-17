@@ -1,9 +1,12 @@
+// Archivo que contiene funciones de middleware para la autenticación de JSON Web Tokens (JWT)
+
 const jwt = require("jsonwebtoken");
 const config = require("../config/auth.config.js");
 const db = require("../models");
 const User = db.user;
 const Role = db.role;
 
+// Función de middleware para verificar el token de autenticación
 verifyToken = (req, res, next) => {
   let token = req.session.token;
 
@@ -20,6 +23,7 @@ verifyToken = (req, res, next) => {
   });
 };
 
+// Función de middleware para verificar si el usuario es un administrador
 isAdmin = (req, res, next) => {
   User.findById(req.userId).exec((err, user) => {
     if (err) {
@@ -51,6 +55,7 @@ isAdmin = (req, res, next) => {
   });
 };
 
+// Función de middleware para verificar si el usuario es un moderador
 isModerator = (req, res, next) => {
   User.findById(req.userId).exec((err, user) => {
     if (err) {
@@ -82,9 +87,11 @@ isModerator = (req, res, next) => {
   });
 };
 
+// Objeto que contiene las funciones de middleware de autenticación
 const authJwt = {
   verifyToken,
   isAdmin,
   isModerator,
 };
+
 module.exports = authJwt;

@@ -1,18 +1,16 @@
 /* Media queries */
 @media only screen and (max-width: 992px) {
-    /* Estilos para tablets y dispositivos con pantalla más pequeña */
-  
-  
-    .navbar-nav {
-      flex-direction: column;
-    }
-  
-    .navbar-nav li {
-      margin-bottom: 10px;
-    }
-  
-    .navbar-nav.ml-auto {
-      margin-top: 10px;
+  /* Estilos para tablets y dispositivos con pantalla más pequeña */
+
+  .navbar-nav {
+    flex-direction: column; /* Cambia la dirección de los elementos del navbar a una disposición vertical */
   }
+
+  .navbar-nav li {
+    margin-bottom: 10px; /* Margen inferior de 10px para cada elemento de lista del navbar */
   }
-  
+
+  .navbar-nav.ml-auto {
+    margin-top: 10px; /* Margen superior de 10px para el navbar con clase ml-auto */
+  }
+}

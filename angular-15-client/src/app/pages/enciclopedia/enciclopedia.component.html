@@ -1,16 +1,16 @@
 <div class="enciclopedia-container">
-    <h1>Enciclopedia de Personajes</h1>
-    <div>
-      <label for="characterId">ID del personaje:</label>
-      <input type="number" id="characterId" [(ngModel)]="characterId">
-      <button (click)="buscarPersonaje()">Buscar</button>
-    </div>
-    <div *ngIf="errorMessage" class="error-message">
-      {{ errorMessage }}
-    </div>
-    <div *ngIf="character" class="character" >
-        <h2>{{ character.name }}</h2>
-        <p>{{ character.description }}</p>
-        <img [src]="getCharacterImageUrl(character.thumbnail)" alt="Character Image">
-      </div>
+  <h1>Enciclopedia de Personajes</h1> <!-- Título principal de la enciclopedia -->
+  <div>
+    <label for="characterId">ID del personaje:</label> <!-- Etiqueta para el campo de entrada de ID -->
+    <input type="number" id="characterId" [(ngModel)]="characterId"> <!-- Campo de entrada para el ID del personaje -->
+    <button (click)="buscarPersonaje()">Buscar</button> <!-- Botón para buscar el personaje -->
   </div>
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }} <!-- Mensaje de error que se muestra si hay un error en la búsqueda -->
+  </div>
+  <div *ngIf="character" class="character">
+    <h2>{{ character.name }}</h2> <!-- Nombre del personaje -->
+    <p>{{ character.description }}</p> <!-- Descripción del personaje -->
+    <img [src]="getCharacterImageUrl(character.thumbnail)" alt="Character Image"> <!-- Imagen del personaje -->
+  </div>
+</div>

@@ -1,52 +1,52 @@
 .enciclopedia-container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
+  max-width: 800px; /* Ancho máximo del contenedor */
+  margin: 0 auto; /* Centra el contenedor horizontalmente */
+  padding: 20px; /* Espacio interno alrededor del contenedor */
 }
 
 h1 {
-  text-align: center;
+  text-align: center; /* Centra el texto en el centro horizontal */
 }
 
 .search-container {
-  margin-bottom: 20px;
+  margin-bottom: 20px; /* Margen inferior para el contenedor de búsqueda */
 }
 
 label {
-  font-weight: bold;
-  margin-right: 10px;
+  font-weight: bold; /* Texto en negrita para las etiquetas */
+  margin-right: 10px; /* Margen derecho para las etiquetas */
 }
 
 input[type="number"] {
-  padding: 5px;
-  width: 100px;
+  padding: 5px; /* Espacio interno alrededor del campo de entrada de número */
+  width: 100px; /* Ancho del campo de entrada de número */
 }
 
 button {
-  padding: 5px 10px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  cursor: pointer;
+  padding: 5px 10px; /* Espacio interno alrededor del botón */
+  background-color: #007bff; /* Color de fondo del botón */
+  color: #fff; /* Color del texto del botón */
+  border: none; /* Sin borde en el botón */
+  cursor: pointer; /* Cambia el cursor al pasar por encima del botón */
 }
 
 .error-message {
-  background-color: #f8d7da;
-  color: #721c24;
-  padding: 10px;
-  margin-bottom: 20px;
+  background-color: #f8d7da; /* Color de fondo para el mensaje de error */
+  color: #721c24; /* Color del texto del mensaje de error */
+  padding: 10px; /* Espacio interno alrededor del mensaje de error */
+  margin-bottom: 20px; /* Margen inferior para el mensaje de error */
 }
 
 .character {
-  margin-top: 10px;
+  margin-top: 10px; /* Margen superior para los elementos del personaje */
 }
 
 .character p {
-  color: #d3c2c2;
+  color: #d3c2c2; /* Color del texto de párrafo del personaje */
 }
 
 .character img {
-  max-width: 100%;
-  height: auto;
-  margin-top: 10px;
+  max-width: 100%; /* Ancho máximo de la imagen del personaje */
+  height: auto; /* Altura automática de la imagen del personaje */
+  margin-top: 10px; /* Margen superior para la imagen del personaje */
 }

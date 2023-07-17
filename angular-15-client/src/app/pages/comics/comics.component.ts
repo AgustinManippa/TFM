@@ -10,21 +10,23 @@ import Swal from 'sweetalert2';
   styleUrls: ['./comics.component.css'],
 })
 export class ComicsComponent {
-  comics: ComicsResult[] = [];
-  formGroup: FormGroup;
-  comicsPerPage = 50;
-  maxComics = 0;
+  comics: ComicsResult[] = []; // Array para almacenar los cómics cargados
+  formGroup: FormGroup; // FormGroup para el formulario de carga de cómics
+  comicsPerPage = 50; // Cantidad de cómics por página
+  maxComics = 0; // Cantidad máxima de cómics disponibles
 
   constructor(
-    private readonly marvelService: MarvelService,
-    private readonly formBuilder: FormBuilder
+    private readonly marvelService: MarvelService, // Servicio para obtener los cómics desde Marvel API
+    private readonly formBuilder: FormBuilder // FormBuilder para construir el formulario de carga
   ) {
+    // Inicialización del formulario de carga de cómics con validadores
     this.formGroup = this.formBuilder.group({
       offset: [0, [Validators.required, Validators.min(0)]],
     });
   }
 
   ngOnInit(): void {
+    // Al iniciar el componente, se obtiene la cantidad máxima de cómics disponibles
     this.marvelService.getComics(1, 0).subscribe(
       (response: GetComicsResult) => {
         this.maxComics = response.total;
@@ -34,7 +36,7 @@ export class ComicsComponent {
         // Manejar el error aquí
       }
     );
-    this.loadComics();
+    this.loadComics(); // Cargar los cómics iniciales
   }
 
   loadComics() {
@@ -42,7 +44,7 @@ export class ComicsComponent {
       const limit = 50;
       const offset = parseInt(this.formGroup.get('offset')?.value, 10) || 0;
 
-      // Borra la lista de comics existente
+      // Borra la lista de cómics existente
       this.comics = [];
 
       Swal.fire({
@@ -55,16 +57,16 @@ export class ComicsComponent {
         },
       });
 
+      // Llama al servicio para obtener los cómics con el límite y offset especificados
       this.marvelService.getComics(limit, offset).subscribe(
         (response: GetComicsResult) => {
-          this.comics = response?.results || [];
+          this.comics = response?.results || []; // Asigna los cómics obtenidos al array
           Swal.close(); // Cierra el diálogo de SweetAlert
         },
         (error: any) => {
           console.error(error);
           // Manejar el error aquí
           Swal.close(); // Cierra el diálogo de SweetAlert en caso de error
-
         }
       );
     } else {

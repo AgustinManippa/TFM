@@ -8,16 +8,16 @@ describe('BoardModeratorComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BoardModeratorComponent ]
+      declarations: [ BoardModeratorComponent ] // Declaraciones de componentes necesarios para el componente a probar
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(BoardModeratorComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    fixture = TestBed.createComponent(BoardModeratorComponent); // Creación del componente a probar
+    component = fixture.componentInstance; // Obtener una instancia del componente
+    fixture.detectChanges(); // Ejecutar la detección de cambios del componente
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(component).toBeTruthy(); // Comprobar que el componente se ha creado correctamente
   });
 });

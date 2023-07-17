@@ -1,16 +1,16 @@
 body {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
+  height: 100%; /* Establece la altura del body al 100% de la ventana */
+  width: 100%; /* Establece el ancho del body al 100% de la ventana */
+  margin: 0; /* Elimina los márgenes alrededor del body */
+  padding: 0; /* Elimina el relleno dentro del body */
 }
 
 #app {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  display: flex; /* Utiliza un diseño flexible para el elemento con el ID 'app' */
+  flex-direction: column; /* Establece la dirección de flexión en columna */
+  min-height: 100vh; /* Establece la altura mínima del elemento al 100% de la ventana */
 }
 
 .container {
-  flex-grow: 1;
+  flex-grow: 1; /* Permite que el contenedor crezca y ocupe todo el espacio disponible en la dirección de flexión */
 }
