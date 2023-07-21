@@ -1,15 +1,30 @@
-// Archivo que define el modelo de datos para los mensajes
+/**
+ * @file Archivo que define el modelo de datos para los mensajes.
+ * @module MessageModel
+ */
 
 const mongoose = require('mongoose');
 
-// Definición del modelo de mensaje utilizando Mongoose
+/**
+ * Definición del modelo de mensaje utilizando Mongoose.
+ * @typedef {Object} MessageModel
+ * @property {string} senderUsername - Nombre de usuario del remitente.
+ * @property {string} recipientUsername - Nombre de usuario del destinatario.
+ * @property {string} content - Contenido del mensaje.
+ * @property {Date} createdAt - Fecha de creación del mensaje.
+ */
+
+/**
+ * Modelo de mensaje.
+ * @type {mongoose.Model<MessageModel>}
+ */
 const Message = mongoose.model(
   "Message",
   new mongoose.Schema({
-    senderUsername: String, // Nombre de usuario del remitente
-    recipientUsername: String, // Nombre de usuario del destinatario
-    content: String, // Contenido del mensaje
-    createdAt: Date // Fecha de creación del mensaje
+    senderUsername: String,
+    recipientUsername: String,
+    content: String,
+    createdAt: Date
   })
 );
 

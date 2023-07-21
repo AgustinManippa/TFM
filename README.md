@@ -51,19 +51,18 @@ Instalación y Configuración
 
 Clone el repositorio de la aplicación desde GitHub: git clone https://github.com/AgustinManippa/TFM.git.
 Navegue al directorio de la aplicación: cd TFM.
-Luego navegue al directorio del front y back de la aplicación(no importa cual de los dos primero): 
+Luego navegue al directorio del front y back de la aplicación(no importa cual de los dos primero):
 cd angular-15-client para el front y cd node-js-server para el back.
 Ejecute el comando npm install para instalar las dependencias (). (primero en uno y luego en el otro)
-Configure la URL del servidor en el archivo environment.ts en el directorio src/environments.
 Ejecute los comandos para levantar el servidor y el cliente.
 ## Run
 ### Node.js Server
-Run `node server.js` for a dev server exporting API at http://localhost:8080/.
+Run `node server.js` para una API de exportación de servidor de desarrollo en http://localhost:8080/.
 
 ### Angular Client
-Run `ng serve --port 8081`. Navigate to `http://localhost:8081/#/`.
+Run `ng serve --port 8081`. Navegar a `http://localhost:8081/#/`.
 
-Por ultimo abra su navegador web y navegue a http://localhost:8081 para ver la aplicación en ejecución.
+Por ultimo abra su navegador web y navegue a http://localhost:8081/#/ para ver la aplicación en ejecución.
 
 ## Contacto
 Si tiene alguna pregunta o problema relacionado con el desarrollo de la aplicación, no dude en comunicarse conmigo manippaagustin@gmail.com.

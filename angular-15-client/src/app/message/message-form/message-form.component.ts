@@ -40,7 +40,7 @@ export class MessageFormComponent {
       // Suscribirse a la respuesta del método sendMessage del servicio de conversación
       this.conversationService.sendMessageResponse$.subscribe((response: any) => {
         // Verificar si hay un error en la respuesta
-        if (response.error === 'El destinatario no existe') {
+        if (response.error.error === 'El destinatario no existe') {
           Swal.fire({
             icon: 'error',
             title: 'El destinatario no existe',

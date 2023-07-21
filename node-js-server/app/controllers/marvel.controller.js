@@ -2,7 +2,15 @@
 
 const axios = require('axios');
 var crypto = require('crypto');
-const env = require("../enviroment"); 
+const path = require('path');
+const dotenv = require('dotenv'); // Módulo para cargar variables de entorno desde el archivo .env
+
+
+// Configurar dotenv para cargar las variables de entorno desde el archivo .env
+// Aquí utilizamos path.join() para obtener la ruta completa al archivo .env
+// que está ubicado en la carpeta raíz del proyecto (un nivel más arriba del directorio donde se encuentra este archivo de controlador).
+// Una vez que se configuran las variables de entorno, podremos acceder a ellas mediante process.env.
+dotenv.config({ path: path.join(__dirname, '../.env') });
 
 // Función auxiliar para realizar una solicitud a la API de Marvel
 const makeMarvelRequest = async (url, req, res) => {
@@ -10,7 +18,7 @@ const makeMarvelRequest = async (url, req, res) => {
   const timeStamp = Date.now();
   const hash = crypto
     .createHash('md5')
-    .update(timeStamp + env.privateKey + env.publicKey)
+    .update(timeStamp + process.env.PRIVATE_KEY + process.env.PUBLIC_KEY)
     .digest('hex');
 
   // Obtener los parámetros limit y offset de la solicitud
@@ -36,7 +44,7 @@ const makeMarvelRequest = async (url, req, res) => {
     const response = await axios.get(url, {
       params: {
         ts: timeStamp,
-        apikey: env.publicKey,
+        apikey: process.env.PUBLIC_KEY,
         hash: hash,
         limit: limit,
         offset: offset,
@@ -74,7 +82,7 @@ const getMarvelData = async (url) => {
   const timeStamp = Date.now();
   const hash = crypto
     .createHash('md5')
-    .update(timeStamp + env.privateKey + env.publicKey)
+    .update(timeStamp + process.env.PRIVATE_KEY + process.env.PUBLIC_KEY)
     .digest('hex');
 
   try {
@@ -82,7 +90,7 @@ const getMarvelData = async (url) => {
     const response = await axios.get(url, {
       params: {
         ts: timeStamp,
-        apikey: env.publicKey,
+        apikey: process.env.PUBLIC_KEY,
         hash: hash,
       },
     });

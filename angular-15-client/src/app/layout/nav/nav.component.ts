@@ -17,6 +17,8 @@ export class NavComponent {
   showModeratorBoard = false; // Variable para mostrar o ocultar el panel de moderador
   username?: string; // Variable para almacenar el nombre de usuario
 
+  isCollapsed = true; // Variable para controlar el estado del menú desplegable
+
   eventBusSub?: Subscription;
 
   constructor(

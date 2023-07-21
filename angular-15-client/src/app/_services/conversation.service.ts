@@ -47,6 +47,7 @@ export class ConversationService {
         this.sendMessageResponse$.next(response);
       },
       (error) => {
+        this.sendMessageResponse$.next(error);
         console.error('Error al enviar el mensaje:', error);
       }
     );
